@@ -5,6 +5,7 @@
     "experience": "Pengalaman",
     "projects": "Proyek",
     "skills": "Keahlian",
+    "certificate": "Sertifikat",
     "contact": "Kontak",
     "cv-download": "CV"
   },
@@ -12,7 +13,7 @@
   "Hero": {
     "availability": "Terbuka untuk peluang baru",
     "greeting": "Halo, Saya",
-    "description": "Lulusan Teknik Komputer dan Informatika dengan pengalaman dalam mengembangkan aplikasi web dan mobile, dengan fokus pada teknologi frontend. Memiliki pengalaman dalam pengembangan full-stack, termasuk integrasi API, desain UI/UX, pengujian perangkat lunak, serta pengelolaan database. Antusias untuk menciptakan solusi digital yang efektif, bekerja sama dengan baik, adaptif terhadap perkembangan teknologi, serta berkontribusi dalam proyek-proyek inovatif.",
+    "description": "Lulusan Teknik Komputer dan Informatika dengan pengalaman dalam mengembangkan aplikasi web dan mobile, dengan fokus pada teknologi frontend. Memiliki pengalaman dalam pengembangan full-stack, termasuk integrasi API, desain UI/UX, pengujian perangkat lunak, serta pengelolaan database. Antusias untuk menciptakan solusi digital yang efektif, kolaborasi tim, adaptif terhadap perkembangan teknologi, serta berkontribusi dalam proyek-proyek yang inovatif.",
     "explore": "Jelajahi Karya Saya",
     "contact": "Hubungi Saya",
     "scroll": "Gulir untuk menjelajah",

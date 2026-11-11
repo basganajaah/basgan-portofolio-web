@@ -123,7 +123,7 @@ export const projects: Project[] = [
     ],
     links: {
       github: "https://github.com/Cobalttt2311/f1-view",
-      demo: "https://f1-view-nine.vercel.app/dashboard",
+      demo: "https://f1-view-nine.vercel.app/",
     },
   },
 ];

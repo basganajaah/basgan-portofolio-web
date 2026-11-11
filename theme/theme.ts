@@ -18,8 +18,6 @@ const theme = createTheme({
     text: {
       primary: "#171717",
       secondary: "#737373",
-      third: "#ffffff",
-      fourth: "#22c55e"
     },
     success: {
       main: "#22c55e",

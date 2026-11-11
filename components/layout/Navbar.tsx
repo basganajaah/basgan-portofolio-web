@@ -31,6 +31,7 @@ export default function Navbar() {
     { label: t("experience"), href: "#experience", id: "experience" },
     { label: t("about"), href: "#about", id: "about" },
     { label: t("skills"), href: "#skills", id: "skills" },
+    { label: t("certificate"), href: "#certificate", id: "certificate" },
     { label: t("contact"), href: "#contact", id: "contact" },
   ];
 
@@ -50,7 +51,7 @@ export default function Navbar() {
         }
       }
 
-      // If at the top of the page, no section is active
+      // no section is active
       if (window.scrollY < 150) {
         setActiveSection("");
       }
@@ -290,7 +291,7 @@ export default function Navbar() {
                         px: 1.5,
                         py: 1,
                         "&:hover": {
-                          color: "text.third",
+                          color: "#ffffff",
                         },
                       }}
                     >
