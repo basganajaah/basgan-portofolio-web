@@ -1,0 +1,36 @@
+{
+  "Navbar": {
+    "home": "Beranda",
+    "about": "Tentang",
+    "experience": "Pengalaman",
+    "projects": "Proyek",
+    "skills": "Keahlian",
+    "contact": "Kontak",
+    "cv-download": "CV"
+  },
+
+  "Hero": {
+    "availability": "Terbuka untuk peluang baru",
+    "greeting": "Halo, Saya",
+    "description": "Lulusan Teknik Komputer dan Informatika dengan pengalaman dalam mengembangkan aplikasi web dan mobile, dengan fokus pada teknologi frontend. Memiliki pengalaman dalam pengembangan full-stack, termasuk integrasi API, desain UI/UX, pengujian perangkat lunak, serta pengelolaan database. Antusias untuk menciptakan solusi digital yang efektif, bekerja sama dengan baik, adaptif terhadap perkembangan teknologi, serta berkontribusi dalam proyek-proyek inovatif.",
+    "explore": "Jelajahi Karya Saya",
+    "contact": "Hubungi Saya",
+    "scroll": "Gulir untuk menjelajah",
+    "find": "Temukan saya di"
+  },
+
+  "Projects": {
+    "projects": "Proyek",
+    "title": "Proyek Saya",
+    "subtitle": "Pilihan proyek yang saya kembangkan selama beberapa tahun terakhir. Sebagai catatan, antarmuka untuk proyek internal maupun yang terikat NDA ditampilkan dalam bentuk ilustrasi.",
+    "featured": "Proyek Unggulan",
+    "internship": "Proyek Magang",
+    "academic": "Proyek Akademik",
+    "other": "Proyek Lainnya",
+    "view-project": "Lihat Proyek",
+    "view-github": "Lihat GitHub",
+    "live-demo": "Demo Langsung",
+    "technologies": "Teknologi",
+    "responsibilities": "Tanggung Jawab"
+  }
+}

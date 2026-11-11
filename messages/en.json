@@ -1,0 +1,36 @@
+{
+  "Navbar": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "cv-download": "CV"
+  },
+
+  "Hero": {
+    "availability": "Open to new opportunities",
+    "greeting": "Hello, I'm",
+    "description": "A Computer and Informatics Engineering graduate with practical experience in developing web and mobile applications, with a strong focus on frontend technologies. Experienced in full-stack development, including API integration, UI/UX design, and software testing, with the ability to manage databases efficiently. Eager to leverage my skills to create effective digital solutions while collaborating with others, adapting to new technologies, and contributing to innovative projects.",
+    "explore": "Explore My Work",
+    "contact": "Get in Touch",
+    "scroll": "Scroll to explore",
+    "find": "Find me on"
+  },
+
+  "Projects": {
+    "projects": "Projects",
+    "title": "My Projects",
+    "subtitle": "A selection of projects I have developed over the past few years. Please note that interfaces for internal or NDA-protected projects are displayed as illustrations.",
+    "featured": "Featured Projects",
+    "internship": "Internship Projects",
+    "academic": "Academic Projects",
+    "other": "Other Projects",
+    "view-project": "View Project",
+    "view-github": "View GitHub",
+    "live-demo": "Live Demo",
+    "technologies": "Technologies",
+    "responsibilities": "Responsibilities"
+  }
+}
