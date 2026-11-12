@@ -1,6 +1,7 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
 import FeaturedProject from "@/components/organisms/Projects/Featured/FeaturedProject";
+import InternshipProject from "./Internship/InternshipProject";
 
 export default function Projects() {
   const t = useTranslations("Projects");
@@ -41,11 +42,11 @@ export default function Projects() {
           </Typography>
 
           <Typography
-            color="text.secondary"
             sx={{
               mt: 2,
               fontSize: { xs: "0.95rem", md: "1.1rem" },
               lineHeight: 1.8,
+              color: "text.secondary",
             }}
           >
             {t("subtitle")}
@@ -53,6 +54,7 @@ export default function Projects() {
         </Box>
 
         <FeaturedProject />
+        <InternshipProject />
       </Container>
     </Box>
   );

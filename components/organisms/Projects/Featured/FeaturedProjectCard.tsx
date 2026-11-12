@@ -59,11 +59,7 @@ export default function FeaturedProjectCard({
               }}
             />
 
-            <Typography
-              variant="caption"
-              color="text.secondary"
-              sx={{ fontWeight: 600 }}
-            >
+            <Typography variant="caption" sx={{ fontWeight: 600 }}>
               {String(index + 1).padStart(2, "0")}
             </Typography>
           </Stack>
@@ -93,7 +89,7 @@ export default function FeaturedProjectCard({
             }}
           >
             {project.context && (
-              <Typography color="text.secondary">
+              <Typography sx={{ color: "text.secondary" }}>
                 {localized(project.context)}
               </Typography>
             )}
@@ -113,7 +109,7 @@ export default function FeaturedProjectCard({
             )}
 
             {project.organization && (
-              <Typography color="text.secondary">
+              <Typography sx={{ color: "text.secondary" }}>
                 {localized(project.organization)}
               </Typography>
             )}
@@ -141,7 +137,7 @@ export default function FeaturedProjectCard({
                 <GroupsOutlinedIcon
                   sx={{ fontSize: 28, color: "text.secondary", pr: "6px" }}
                 />
-                <Typography color="text.secondary">
+                <Typography sx={{ color: "text.secondary" }}>
                   {project.teamSize}{" "}
                   {locale === "id" ? "Anggota Tim" : "Team Members"}
                 </Typography>
@@ -164,7 +160,9 @@ export default function FeaturedProjectCard({
               )}
 
             {project.period && (
-              <Typography color="text.secondary">{project.period}</Typography>
+              <Typography sx={{ color: "text.secondary" }}>
+                {project.period}
+              </Typography>
             )}
 
             <Stack

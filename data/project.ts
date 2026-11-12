@@ -1,6 +1,7 @@
 import type { Project } from "@/types/project";
 
 export const projects: Project[] = [
+  // FEATURED PROJECTS
   {
     id: "sia-sekar-telkom",
     category: "featured",
@@ -9,8 +10,12 @@ export const projects: Project[] = [
       en: "Accounting Information System - Sekar Telkom Foundation",
     },
     context: {
-      id: "Proyek Akademik",
-      en: "Academic Project",
+      id: "Proyek Akademik di bawah NDA",
+      en: "Academic Project under NDA",
+    },
+    notes: {
+      id: "Beberapa data, nama, dan tampilan dalam proyek ini telah disamarkan atau diubah menjadi ilustrasi untuk mematuhi Non-Disclosure Agreements (NDA).",
+      en: "Some data, names, and visuals in this project have been masked or illustrated to comply with Non-Disclosure Agreements (NDA).",
     },
     description: {
       id: "Sistem informasi akuntansi yang dirancang untuk membantu yayasan dan organisasi nirlaba dalam mengelola pencatatan serta pelaporan keuangan secara terstruktur sesuai acuan ISAK 335. Aplikasi ini mencakup satu siklus akuntansi, mulai dari pencatatan transaksi hingga penyusunan laporan keuangan, serta menerapkan algoritma Jaccard Similarity untuk memberikan rekomendasi bagan akun dalam proses pencatatan jurnal umum.",
@@ -28,11 +33,7 @@ export const projects: Project[] = [
     ],
     teamSize: 3,
     period: "2026",
-    roles: [
-      { id: "System Analyst", en: "System Analyst" },
-      { id: "Full Stack Developer", en: "Full Stack Developer" },
-      { id: "UI/UX Designer", en: "UI/UX Designer" },
-    ],
+    roles: ["System Analyst", "Full Stack Developer", "UI/UX Designer"],
     contributions: [
       {
         id: "Melakukan requirements gathering, menentukan ruang lingkup proyek, dan merancang solusi aplikasi.",
@@ -60,9 +61,10 @@ export const projects: Project[] = [
       en: "Sekar Telkom Foundation",
     },
     gallery: [
-      "/images/projects/SIA-01.png",
-      "/images/projects/SIA-02.png",
-      "/images/projects/SIA-03.png",
+      "/images/projects/SIA-01.jpeg",
+      "/images/projects/SIA-02.jpeg",
+      "/images/projects/SIA-03.jpeg",
+      "/images/projects/SIA-04.jpeg",
     ],
     links: {
       gitlab: "https://gitlab.com/basganajaah/yst-sistem-informasi-akuntansi",
@@ -96,7 +98,7 @@ export const projects: Project[] = [
     ],
     teamSize: 2,
     period: "2026",
-    roles: [{ id: "Frontend Engineer", en: "Frontend Engineer" }],
+    roles: ["Frontend Engineer"],
     contributions: [
       {
         id: "Melakukan migrasi frontend dari Vanilla JavaScript ke React.",
@@ -125,5 +127,227 @@ export const projects: Project[] = [
       github: "https://github.com/Cobalttt2311/f1-view",
       demo: "https://f1-view-nine.vercel.app/",
     },
+  },
+
+  // INTERNSHIP PROJECTS
+  {
+    id: "NTI-Benso",
+    category: "internship",
+    title: {
+      id: "Analitik Jaringan Telco - Benchmark Solution",
+      en: "Telco Network Analytics - Benchmark Solution",
+    },
+    description: {
+      id: "Benchmark Solution adalah platform berbasis web yang terintegrasi dengan berbagai dashboard khusus untuk membantu operator jaringan memantau serta membandingkan kinerja layanan telekomunikasi dengan provider lain di Indonesia.",
+      en: "Benchmark Solution is a web-based platform integrated with various dashboards to help network operators monitor and compare telecommunications service performance against other providers in Indonesia.",
+    },
+    organization: {
+      id: "PT Neural Technologies Indonesia",
+      en: "PT Neural Technologies Indonesia",
+    },
+    period: "2025",
+    technologies: [
+      "React",
+      "Vue",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Tanstack Query",
+      "Zustand",
+      "Ant Design",
+      "Echarts",
+      "MSW",
+    ],
+    roles: ["Frontend Engineer"],
+    contributions: [
+      {
+        id: "Melakukan slicing dan implementasi desain UI dari Figma ke dalam aplikasi React dan Vue dengan TypeScript menggunakan Ant Design, dengan membangun komponen yang modular dan reusable.",
+        en: "Translated Figma designs into React and Vue with TypeScript interfaces using Ant Design, building modular and reusable components.",
+      },
+      {
+        id: "Mengelola state aplikasi, UI, dan filter menggunakan Zustand, serta mengintegrasikan REST API dan data fetching menggunakan TanStack React Query.",
+        en: "Managed application state, UI interactions, and filters using Zustand, while integrating REST APIs and handling server-side data fetching with TanStack React Query.",
+      },
+      {
+        id: "Mengembangkan visualisasi data menggunakan Apache ECharts, mengimplementasikan tabel dan komponen dashboard dinamis, serta mengonfigurasi tipografi dan tema light/dark mode.",
+        en: "Developed data visualizations using Apache ECharts, implemented tables and dynamic dashboard components, and configured typography and light/dark themes.",
+      },
+      {
+        id: "Meningkatkan desain UI/UX serta melakukan refactoring terhadap kode yang sudah ada untuk meningkatkan usability, maintainability, dan kualitas kode aplikasi.",
+        en: "Improved UI/UX designs and refactored existing code to enhance application usability, maintainability, and overall code quality.",
+      },
+      {
+        id: "Melakukan deployment dashboard melalui workflow Telegram Bot dan Termius untuk mendukung proses deployment pada lingkungan development.",
+        en: "Deployed web dashboards through Telegram Bot workflows and Termius, supporting deployment processes in the development environment.",
+      },
+    ],
+    shortContributions: [
+      {
+        id: "Implementasi UI",
+        en: "UI Implementation",
+      },
+      {
+        id: "Integrasi API & Manajemen State",
+        en: "API Integration & State Management",
+      },
+      {
+        id: "Visualisasi Data & Pengaturan Tema",
+        en: "Data Visualization & Theming",
+      },
+      {
+        id: "Refaktorisasi & Deployment",
+        en: "Refactoring & Deployment",
+      },
+    ],
+    context: {
+      id: "Proyek Magang di bawah NDA",
+      en: "Internship Project under NDA",
+    },
+    notes: {
+      id: "Sebagian data dan tampilan telah disesuaikan demi mematuhi NDA.",
+      en: "Some data and visuals have been adjusted to comply with an NDA.",
+    },
+    uniqueFacts: [
+      {
+        value: "5 Dashboards",
+        label: {
+          id: "Semua terintegrasi dalam satu platform",
+          en: "All-in-one integrated platform",
+        },
+      },
+      {
+        value: "2 Frameworks",
+        label: {
+          id: "Dibangun menggunakan React dan Vue",
+          en: "Built using React and Vue",
+        },
+      },
+      {
+        value: "2 Source Data",
+        label: {
+          id: "Dari platform pengukuran jaringan global terkemuka.",
+          en: "From leading global network benchmarking platforms.",
+        },
+      },
+    ],
+    gallery: ["/images/projects/BENSO-01.jpeg"],
+  },
+  {
+    id: "NTI-POI-CEI",
+    category: "internship",
+    title: {
+      id: "Analitik Jaringan Telco - POI CEI 7 KQI",
+      en: "Telco Network Analytics - POI CEI 7 KQI",
+    },
+    description: {
+      id: "Dashboard real-time untuk memantau kualitas pengalaman pelanggan (CEI) di berbagai lokasi penting (POI) berdasarkan 7 indikator utama (latensi, jitter, dan stabilitas) pada layanan web, streaming, serta game guna mendeteksi gangguan dan menjaga performa tetap optimal.",
+      en: "A real-time dashboard monitoring the Customer Experience Index (CEI) across key Points of Interest (POI) via 7 Key Quality Indicators (latency, jitter, and stability) for web, streaming, and gaming services to detect issues and maintain optimal performance.",
+    },
+    organization: {
+      id: "PT Neural Technologies Indonesia",
+      en: "PT Neural Technologies Indonesia",
+    },
+    period: "2025",
+    technologies: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Tailwind CSS",
+      "Tanstack Query",
+      "Zustand",
+      "Material UI",
+      "Echarts",
+      "Mapbox-Gl",
+      "Framer Motion",
+    ],
+    roles: ["Frontend Engineer"],
+    contributions: [
+      {
+        id: "Mengembangkan frontend POI-CEI secara mandiri sebagai Solo Frontend Engineer hingga produk mencapai tahap MVP dan rilis versi pertamanya.",
+        en: "Solely developed the POI-CEI frontend as the Solo Frontend Engineer, bringing the product to its initial MVP release.",
+      },
+      {
+        id: "Mengimplementasikan desain UI dari Figma menggunakan React, TypeScript, dan Material UI dengan membangun komponen yang modular, reusable, dan responsif.",
+        en: "Translated Figma designs into responsive interfaces using React, TypeScript, and Material UI, building modular and reusable components.",
+      },
+      {
+        id: "Mengembangkan peta interaktif menggunakan Mapbox GL, termasuk fitur pencarian lokasi melalui search bar yang terintegrasi dengan peta.",
+        en: "Developed interactive maps using Mapbox GL, including an integrated search bar for location discovery.",
+      },
+      {
+        id: "Mengimplementasikan dashboard dengan pembaruan data berkala menggunakan TanStack React Query untuk mendukung pemantauan performa jaringan secara real-time.",
+        en: "Implemented scheduled data polling with TanStack React Query to support real-time network performance monitoring.",
+      },
+      {
+        id: "Mengelola state aplikasi menggunakan Zustand, mengintegrasikan REST API, serta mengimplementasikan alur autentikasi pada sisi frontend.",
+        en: "Managed application state using Zustand, integrated REST APIs, and implemented the frontend authentication flow.",
+      },
+      {
+        id: "Mengembangkan visualisasi data menggunakan Apache ECharts, serta mengonfigurasi tema light/dark mode dan tipografi untuk meningkatkan konsistensi antarmuka.",
+        en: "Developed data visualizations using Apache ECharts and configured light/dark themes and typography to improve interface consistency.",
+      },
+      {
+        id: "Menggunakan Mockoon untuk menyediakan mock API selama proses pengembangan dan integrasi frontend.",
+        en: "Used Mockoon to provide mock APIs during frontend development and integration.",
+      },
+    ],
+    shortContributions: [
+      {
+        id: "Pengembangan Frontend Mandiri",
+        en: "Solo Frontend Development",
+      },
+      {
+        id: "Implementasi UI",
+        en: "UI Implementation",
+      },
+      {
+        id: "Peta Interaktif & Pencarian Lokasi",
+        en: "Interactive Map & Location Search",
+      },
+      {
+        id: "Integrasi Data Real-Time",
+        en: "Real-Time Data Integration",
+      },
+      {
+        id: "Implementasi Autentikasi Frontend",
+        en: "Frontend Authentication",
+      },
+      {
+        id: "Visualisasi Data & Pengaturan Tema",
+        en: "Data Visualization & Theming",
+      },
+    ],
+    context: {
+      id: "Proyek Magang di bawah NDA",
+      en: "Internship Project under NDA",
+    },
+    notes: {
+      id: "Sebagian data dan tampilan telah disesuaikan demi mematuhi NDA.",
+      en: "Some data and visuals have been adjusted to comply with an NDA.",
+    },
+    uniqueFacts: [
+      {
+        value: "7",
+        label: {
+          id: "Indikator Kualitas Utama (KQI)",
+          en: "Key Quality Indicators (KQI)",
+        },
+      },
+      {
+        value: "Solo Frontend",
+        label: {
+          id: "Mengembangkan frontend secara mandiri hingga rilis MVP pertama.",
+          en: "Independently built the frontend through its initial MVP release.",
+        },
+      },
+      {
+        value: "Real-Time",
+        label: {
+          id: "Pembaruan data berkala untuk pemantauan performa jaringan.",
+          en: "Scheduled data updates for network performance monitoring.",
+        },
+      },
+    ],
+    gallery: ["/images/projects/POI-CEI-01.jpeg"],
   },
 ];

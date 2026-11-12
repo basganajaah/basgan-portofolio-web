@@ -1,4 +1,4 @@
-import type { LocalizedText } from "@/types/common";
+import type { LocalizedText, uniqueFactsData } from "@/types/common";
 
 export type ProjectCategory = "featured" | "internship" | "academic" | "other";
 
@@ -8,13 +8,16 @@ export interface Project {
   title: LocalizedText;
   description: LocalizedText;
   context?: LocalizedText;
+  notes?: LocalizedText;
   gallery?: string[];
   technologies: string[];
   teamSize?: number;
-  roles?: LocalizedText[];
+  roles?: string[];
   period?: string;
   organization?: LocalizedText;
   contributions?: LocalizedText[];
+  shortContributions?: LocalizedText[];
+  uniqueFacts?: uniqueFactsData[];
   links?: {
     github?: string;
     gitlab?: string;

@@ -21,9 +21,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bandyaga A. Sugandi | Fullstack Engineer",
+  title: "Bandyaga A. Sugandi | My Journey Portofolio Website",
   description:
-    "Fullstack Engineer passionate about building modern, responsive, and scalable web applications.",
+    "Fullstack Developer passionate about building modern, responsive, and scalable web applications.",
 };
 
 export function generateStaticParams() {

@@ -38,18 +38,38 @@ export default function FeaturedProjectDetail({
         }}
       >
         {/* Description */}
-        <Box sx={{ minWidth: 0 }}>
-          <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
-            {locale === "id" ? "Tentang Proyek" : "About the Project"}
-          </Typography>
+        <Stack direction={"column"} sx={{ gap: 1 }}>
+          <Box sx={{ minWidth: 0 }}>
+            <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
+              {locale === "id" ? "Tentang Proyek" : "About the Project"}
+            </Typography>
 
-          <Typography
-            color="text.secondary"
-            sx={{ fontSize: "0.95rem", lineHeight: 1.85 }}
-          >
-            {localized(project.description)}
-          </Typography>
-        </Box>
+            <Typography
+              sx={{
+                fontSize: "0.95rem",
+                lineHeight: 1.5,
+                color: "text.secondary",
+              }}
+            >
+              {localized(project.description)}
+            </Typography>
+
+            {/* Problem Statement */}
+            {project.notes && (
+              <Typography
+                sx={{
+                  fontSize: "0.95rem",
+                  lineHeight: 1.5,
+                  color: "text.secondary",
+                  mt: 4,
+                  fontStyle: "italic"
+                }}
+              >
+                {localized(project.notes)}
+              </Typography>
+            )}
+          </Box>
+        </Stack>
 
         {/* Contributions */}
         {project.contributions && project.contributions.length > 0 && (
@@ -79,8 +99,11 @@ export default function FeaturedProjectDetail({
                   />
 
                   <Typography
-                    color="text.secondary"
-                    sx={{ lineHeight: 1.7 }}
+                    sx={{
+                      fontSize: "0.95rem",
+                      lineHeight: 1.5,
+                      color: "text.secondary",
+                    }}
                   >
                     {localized(contribution)}
                   </Typography>
@@ -123,7 +146,7 @@ export default function FeaturedProjectDetail({
               {project.roles.map((role, roleIndex) => (
                 <RoleChip
                   key={`${project.id}-role-${roleIndex}`}
-                  label={localized(role)}
+                  label={role}
                 />
               ))}
             </Stack>
