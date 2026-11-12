@@ -25,7 +25,7 @@ export default function InternshipProjectItem({
   const isReversed = index % 2 !== 0;
   const image = project.gallery?.[0];
 
-  const getText = (value?: { id: string; en: string }) =>
+  const Localize = (value?: { id: string; en: string }) =>
     value ? (locale === "id" ? value.id : value.en) : "";
 
   const detailLabel = locale === "id" ? "Lihat Detail" : "See Details";
@@ -73,7 +73,7 @@ export default function InternshipProjectItem({
               >
                 <Image
                   src={image}
-                  alt={getText(project.title)}
+                  alt={Localize(project.title)}
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
@@ -99,7 +99,7 @@ export default function InternshipProjectItem({
                   mb: 1.5,
                 }}
               >
-                {getText(project.title)}
+                {Localize(project.title)}
               </Typography>
 
               <Typography
@@ -108,7 +108,7 @@ export default function InternshipProjectItem({
                   color: "text.secondary",
                 }}
               >
-                {getText(project.description)}
+                {Localize(project.description)}
               </Typography>
             </Box>
 
@@ -134,7 +134,7 @@ export default function InternshipProjectItem({
               <Typography sx={{ color: "text.disabled" }}>•</Typography>
 
               <Typography sx={{ color: "text.secondary" }}>
-                {getText(project.context)}
+                {Localize(project.context)}
               </Typography>
             </Stack>
 
@@ -168,7 +168,7 @@ export default function InternshipProjectItem({
                         lineHeight: 1.3,
                       }}
                     >
-                      {getText(fact.value)}
+                      {Localize(fact.value)}
                     </Typography>
 
                     <Typography
@@ -181,7 +181,7 @@ export default function InternshipProjectItem({
                         color: "text.secondary",
                       }}
                     >
-                      {getText(fact.label)}
+                      {Localize(fact.label)}
                     </Typography>
                   </Box>
                 ))}
@@ -224,7 +224,7 @@ export default function InternshipProjectItem({
                         variant="caption"
                         color="text.secondary"
                       >
-                        {getText(item)}
+                        {Localize(item)}
                       </Typography>
                     </Box>
                   ))}

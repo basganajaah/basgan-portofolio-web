@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useEffect } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import {
   Box,
@@ -31,25 +32,36 @@ export default function InternshipProjectDrawer({
 }: InternshipProjectDrawerProps) {
   const locale = useLocale();
 
-  const getText = (value?: { id: string; en: string }) =>
+  const Localize = (value?: { id: string; en: string }) =>
     value ? (locale === "id" ? value.id : value.en) : "";
 
-  const content = {
-    contributions: locale === "id" ? "Kontribusi Utama" : "Key Contributions",
-    technologies: locale === "id" ? "Teknologi" : "Technologies",
-    gallery: locale === "id" ? "Galeri Proyek" : "Project Gallery",
-    footnote: locale === "id" ? "Catatan Kaki" : "Footnote",
-  };
+  const t = useTranslations("Projects");
 
-  const footnote = [getText(project.context), getText(project.notes)]
+  const footnote = [Localize(project.context), Localize(project.notes)]
     .filter(Boolean)
     .join("\n\n");
+
+  useEffect(() => {
+    if (!open) return;
+
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+    const originalBodyOverflow = document.body.style.overflow;
+
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.documentElement.style.overflow = originalHtmlOverflow;
+      document.body.style.overflow = originalBodyOverflow;
+    };
+  }, [open]);
 
   return (
     <Drawer
       anchor={anchor}
       open={open}
       onClose={onClose}
+
       slotProps={{
         backdrop: {
           sx: {
@@ -138,7 +150,7 @@ export default function InternshipProjectDrawer({
                 mb: 2,
               }}
             >
-              {getText(project.title)}
+              {Localize(project.title)}
             </Typography>
 
             <Stack
@@ -152,19 +164,24 @@ export default function InternshipProjectDrawer({
               {project.roles?.map((role, index) => (
                 <Typography
                   key={`${project.id}-role-${index}`}
-                  variant="body2"
-                  sx={{ fontWeight: 600 }}
+                  sx={{ color: "text.secondary" }}
                 >
                   {index > 0 ? `, ${role}` : role}
                 </Typography>
               ))}
 
               {project.roles && project.roles.length > 0 && (
-                <Typography sx={{ color: "text.disabled" }}>•</Typography>
+                <Typography sx={{ color: "text.secondary" }}>•</Typography>
               )}
 
-              <Typography variant="body2" sx={{ color: "text.secondary" }}>
+              <Typography sx={{ color: "text.secondary" }}>
                 {project.period}
+              </Typography>
+
+              <Typography sx={{ color: "text.secondary" }}>•</Typography>
+
+              <Typography sx={{ color: "text.secondary" }}>
+                {Localize(project.context)}
               </Typography>
             </Stack>
           </Box>
@@ -172,10 +189,6 @@ export default function InternshipProjectDrawer({
           {/* Gallery */}
           {project.gallery && project.gallery.length > 0 && (
             <Box>
-              <Typography variant="h6" sx={{ fontWeight: 700, mb: 1.5 }}>
-                {content.gallery}
-              </Typography>
-
               <Stack spacing={2}>
                 {project.gallery.map((image, index) => (
                   <Box
@@ -187,11 +200,15 @@ export default function InternshipProjectDrawer({
                       borderRadius: 2,
                       overflow: "hidden",
                       bgcolor: "action.hover",
+                      transition: "0.25s ease-in-out",
+                      " &:hover": {
+                        scale: 1.025,
+                      },
                     }}
                   >
                     <Image
                       src={image}
-                      alt={`${getText(project.title)} - ${index + 1}`}
+                      alt={`${Localize(project.title)} - ${index + 1}`}
                       fill
                       sizes="(max-width: 680px) 100vw, 680px"
                       style={{ objectFit: "cover" }}
@@ -210,7 +227,7 @@ export default function InternshipProjectDrawer({
               color: "text.secondary",
             }}
           >
-            {getText(project.description)}
+            {Localize(project.description)}
           </Typography>
 
           {/* Unique Facts */}
@@ -219,15 +236,20 @@ export default function InternshipProjectDrawer({
               sx={{
                 display: "grid",
                 gridTemplateColumns: `repeat(${project.uniqueFacts.length}, minmax(0, 1fr))`,
-                py: 1,
+                py: 2,
               }}
             >
               {project.uniqueFacts.map((fact, index) => (
                 <Box
                   key={`${project.id}-drawer-fact-${index}`}
                   sx={{
-                    px: 1.5,
+                    px: { xs: 2, sm: 3 },
+                    py: 1,
                     textAlign: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
                     borderRight:
                       index !== project.uniqueFacts!.length - 1
                         ? "2px solid"
@@ -240,20 +262,23 @@ export default function InternshipProjectDrawer({
                     sx={{
                       fontSize: { xs: 17, sm: 22 },
                       fontWeight: 700,
+                      lineHeight: 1.2,
                     }}
                   >
-                    {getText(fact.value)}
+                    {Localize(fact.value)}
                   </Typography>
 
                   <Typography
                     variant="caption"
                     sx={{
                       display: "block",
-                      mt: 0.5,
+                      mt: 0.75,
                       color: "text.secondary",
+                      lineHeight: 1.3,
+                      wordBreak: "break-word",
                     }}
                   >
-                    {getText(fact.label)}
+                    {Localize(fact.label)}
                   </Typography>
                 </Box>
               ))}
@@ -270,7 +295,7 @@ export default function InternshipProjectDrawer({
                   mb: 2,
                 }}
               >
-                {content.contributions}
+                {t("key-contribution")}
               </Typography>
 
               <Stack spacing={1.5}>
@@ -291,7 +316,6 @@ export default function InternshipProjectDrawer({
                         minHeight: 7,
                         borderRadius: "50%",
                         bgcolor: "text.primary",
-                        mt: "8px",
                         flexShrink: 0,
                       }}
                     />
@@ -303,7 +327,7 @@ export default function InternshipProjectDrawer({
                         color: "text.secondary",
                       }}
                     >
-                      {getText(contribution)}
+                      {Localize(contribution)}
                     </Typography>
                   </Box>
                 ))}
@@ -322,7 +346,7 @@ export default function InternshipProjectDrawer({
                 mb: 2,
               }}
             >
-              {content.technologies}
+              {t("technologies")}
             </Typography>
 
             <Box
@@ -348,7 +372,7 @@ export default function InternshipProjectDrawer({
                   mb: 1,
                 }}
               >
-                {content.footnote}
+                {t("footnote")}
               </Typography>
 
               <Typography

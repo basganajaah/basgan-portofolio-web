@@ -28,10 +28,13 @@
     "internship": "Proyek Magang",
     "academic": "Proyek Akademik",
     "other": "Proyek Lainnya",
+    "technologies": "Teknologi",
+    "responsibilities": "Tanggung Jawab",
     "view-project": "Lihat Proyek",
     "view-github": "Lihat GitHub",
     "live-demo": "Demo Langsung",
-    "technologies": "Teknologi",
-    "responsibilities": "Tanggung Jawab"
+    "view-details": "Lihat Detail",
+    "key-contribution": "Kontribusi Utama",
+    "footnote": "Catatan"
   }
 }

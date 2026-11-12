@@ -7,10 +7,14 @@
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: hidden;
   --background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #eef2ff 100%);
   background-attachment: fixed;
   color: var(--foreground);
@@ -19,30 +23,31 @@ body {
 
 /* Chrome, Edge, Safari */
 @supports selector(::-webkit-scrollbar) {
-  html::-webkit-scrollbar {
+  ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
 
-  html::-webkit-scrollbar-track {
-    background: transparent;
+  ::-webkit-scrollbar-track {
+    background: transparent !important;
+    background-color: transparent !important;
   }
 
-  html::-webkit-scrollbar-thumb {
+  ::-webkit-scrollbar-thumb {
     background-color: #171717;
     border: 2px solid transparent;
     background-clip: content-box;
     border-radius: 999px;
   }
 
-  html::-webkit-scrollbar-thumb:hover {
+  ::-webkit-scrollbar-thumb:hover {
     background-color: #000000;
   }
 }
 
 /* Firefox */
 @supports not selector(::-webkit-scrollbar) {
-  html {
+  * {
     scrollbar-width: thin;
     scrollbar-color: #171717 transparent;
   }

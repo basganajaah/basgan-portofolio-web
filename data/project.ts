@@ -266,7 +266,7 @@ export const projects: Project[] = [
       "Zustand",
       "Material UI",
       "Echarts",
-      "Mapbox-Gl",
+      "Mapbox-GL",
       "Framer Motion",
     ],
     roles: ["Frontend Engineer"],

@@ -93,7 +93,6 @@ export default function FeaturedProjectDetail({
                       minWidth: 7,
                       minHeight: 7,
                       color: "text.primary",
-                      mt: "7px",
                       flexShrink: 0,
                     }}
                   />
