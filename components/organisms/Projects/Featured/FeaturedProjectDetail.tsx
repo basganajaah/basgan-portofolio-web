@@ -25,7 +25,7 @@ export default function FeaturedProjectDetail({
         sx={{
           flex: 1,
           borderBottomWidth: 2,
-          borderColor: "#171717",
+          borderColor: "#B2BEB5",
         }}
       />
 
@@ -62,7 +62,7 @@ export default function FeaturedProjectDetail({
                   lineHeight: 1.5,
                   color: "text.secondary",
                   mt: 4,
-                  fontStyle: "italic"
+                  fontStyle: "italic",
                 }}
               >
                 {localized(project.notes)}
@@ -118,7 +118,7 @@ export default function FeaturedProjectDetail({
         sx={{
           flex: 1,
           borderBottomWidth: 2,
-          borderColor: "#171717",
+          borderColor: "#B2BEB5",
         }}
       />
 

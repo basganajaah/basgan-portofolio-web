@@ -36,9 +36,10 @@ export default function Navbar() {
   ];
 
   useEffect(() => {
+    const sectionIds = ["projects", "experience", "about", "skills", "certificate", "contact"];
+
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
-      const sectionIds = navLinks.map((link) => link.id);
 
       for (let i = sectionIds.length - 1; i >= 0; i--) {
         const el = document.getElementById(sectionIds[i]);
@@ -51,7 +52,6 @@ export default function Navbar() {
         }
       }
 
-      // no section is active
       if (window.scrollY < 150) {
         setActiveSection("");
       }
@@ -61,7 +61,17 @@ export default function Navbar() {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  });
+  }, []);
+
+  const handleMobileNavClick = (id: string) => {
+    setMenuOpen(false);
+    setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 300);
+  };
 
   return (
     <AppBar
@@ -161,23 +171,25 @@ export default function Navbar() {
                         color: isActive ? "#ffffff" : "#171717",
                       },
 
-                      "&::after": {
-                        content: '""',
-                        position: "absolute",
-                        left: "14px",
-                        right: "14px",
-                        bottom: "4px",
-                        height: "1.5px",
-                        bgcolor: "#171717",
-                        transform: "scaleX(0)",
-                        transformOrigin: "left",
-                        transition:
-                          "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
-                      },
+                      ...(!isActive && {
+                        "&::after": {
+                          content: '""',
+                          position: "absolute",
+                          left: "14px",
+                          right: "14px",
+                          bottom: "4px",
+                          height: "1.5px",
+                          bgcolor: "#171717",
+                          transform: "scaleX(0)",
+                          transformOrigin: "left",
+                          transition:
+                            "transform 0.35s cubic-bezier(0.22, 1, 0.36, 1)",
+                        },
 
-                      "&:hover::after": {
-                        transform: "scaleX(1)",
-                      },
+                        "&:hover::after": {
+                          transform: "scaleX(1)",
+                        },
+                      }),
                     }}
                   >
                     {link.label}
@@ -275,15 +287,11 @@ export default function Navbar() {
                   return (
                     <Button
                       key={link.label}
-                      component="a"
-                      href={link.href}
-                      onClick={() => setMenuOpen(false)}
+                      onClick={() => handleMobileNavClick(link.id)}
                       sx={{
                         justifyContent: "flex-start",
-                        color: isActive ? "text.primary" : "text.secondary",
-                        bgcolor: isActive
-                          ? "rgba(23, 23, 23, 0.08)"
-                          : "transparent",
+                        color: isActive ? "#ffffff" : "text.secondary",
+                        bgcolor: isActive ? "#171717" : "transparent",
                         textTransform: "none",
                         fontSize: "0.9rem",
                         fontWeight: isActive ? 700 : 500,
@@ -292,6 +300,7 @@ export default function Navbar() {
                         py: 1,
                         "&:hover": {
                           color: "#ffffff",
+                          bgcolor: isActive ? "#171717" : "rgba(23, 23, 23, 0.08)",
                         },
                       }}
                     >

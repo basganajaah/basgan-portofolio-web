@@ -9,7 +9,12 @@ export default function FeaturedProject() {
 
   return (
     <Box
-      sx={{ display: "flex", flexDirection: "column", gap: { xs: 9, md: 12 } }}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        gap: { xs: 9, md: 12 },
+        mb: 10,
+      }}
     >
       {featuredProjects.map((project, index) => (
         <FeaturedProjectCard key={project.id} project={project} index={index} />

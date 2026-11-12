@@ -3,6 +3,6 @@ export interface LocalizedText {
   en: string;
 }
 export interface uniqueFactsData {
-  value: string;
+  value: LocalizedText;
   label: LocalizedText;
 }

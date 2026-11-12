@@ -209,24 +209,33 @@ export const projects: Project[] = [
     },
     uniqueFacts: [
       {
-        value: "5 Dashboards",
+        value: {
+          id: "5 Dashboard",
+          en: "5 Dashboards",
+        },
         label: {
           id: "Semua terintegrasi dalam satu platform",
           en: "All-in-one integrated platform",
         },
       },
       {
-        value: "2 Frameworks",
+        value: {
+          id: "2 Kerangka Kerja",
+          en: "2 Frameworks",
+        },
         label: {
           id: "Dibangun menggunakan React dan Vue",
           en: "Built using React and Vue",
         },
       },
       {
-        value: "2 Source Data",
+        value: {
+          id: "2 Sumber Data",
+          en: "2 Data Source",
+        },
         label: {
-          id: "Dari platform pengukuran jaringan global terkemuka.",
-          en: "From leading global network benchmarking platforms.",
+          id: "Dari platform pengukuran jaringan global terkemuka",
+          en: "From leading global network benchmarking platform.",
         },
       },
     ],
@@ -327,24 +336,33 @@ export const projects: Project[] = [
     },
     uniqueFacts: [
       {
-        value: "7",
+        value: {
+          id: "Peta Interaktif",
+          en: "Interactive Map",
+        },
         label: {
-          id: "Indikator Kualitas Utama (KQI)",
-          en: "Key Quality Indicators (KQI)",
+          id: "Menggunakan Mapbox-GL untuk visualisasi peta interaktif",
+          en: "Uses Mapbox-GL for interactive map visualizations",
         },
       },
       {
-        value: "Solo Frontend",
+        value: {
+          id: "Solo Frontend",
+          en: "Solo Frontend",
+        },
         label: {
-          id: "Mengembangkan frontend secara mandiri hingga rilis MVP pertama.",
-          en: "Independently built the frontend through its initial MVP release.",
+          id: "Mengembangkan frontend secara mandiri hingga rilis MVP pertama",
+          en: "Independently built the frontend through its initial MVP release",
         },
       },
       {
-        value: "Real-Time",
+        value: {
+          id: "Real-Time",
+          en: "Real-Time",
+        },
         label: {
-          id: "Pembaruan data berkala untuk pemantauan performa jaringan.",
-          en: "Scheduled data updates for network performance monitoring.",
+          id: "Pembaruan data berkala untuk pemantauan performa jaringan",
+          en: "Scheduled data updates for network performance monitoring",
         },
       },
     ],
