@@ -9,6 +9,8 @@ export default function FeaturedProject() {
 
   return (
     <Box
+      component="section"
+      id="featured-projects"
       sx={{
         display: "flex",
         flexDirection: "column",

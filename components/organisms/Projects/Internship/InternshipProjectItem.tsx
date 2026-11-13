@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import { Box, Button, Stack, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
@@ -28,8 +28,7 @@ export default function InternshipProjectItem({
   const Localize = (value?: { id: string; en: string }) =>
     value ? (locale === "id" ? value.id : value.en) : "";
 
-  const detailLabel = locale === "id" ? "Lihat Detail" : "See Details";
-
+  const t = useTranslations("Projects");
   return (
     <>
       <motion.div
@@ -39,7 +38,7 @@ export default function InternshipProjectItem({
         }}
         whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, amount: 0.15 }}
-        transition={{ duration: 0.65, ease: "easeOut" }}
+        transition={{ duration: 1, ease: "easeOut" }}
       >
         <Box
           sx={{
@@ -63,7 +62,7 @@ export default function InternshipProjectItem({
             {image && (
               <motion.div
                 whileHover={{ scale: 1.035 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                transition={{ duration: 1, ease: "easeOut" }}
                 style={{
                   position: "absolute",
                   inset: 0,
@@ -116,24 +115,32 @@ export default function InternshipProjectItem({
             <Stack
               direction="row"
               spacing={1}
+              useFlexGap
               sx={{
                 alignItems: "center",
                 flexWrap: "wrap",
+                rowGap: 0.5,
               }}
             >
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
+              >
                 {project.roles?.join(", ")}
               </Typography>
 
-              <Typography sx={{ color: "text.disabled" }}>•</Typography>
+              <Typography sx={{ color: "text.secondary" }}>•</Typography>
 
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
+              >
                 {project.period}
               </Typography>
 
-              <Typography sx={{ color: "text.disabled" }}>•</Typography>
+              <Typography sx={{ color: "text.secondary" }}>•</Typography>
 
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
+              >
                 {Localize(project.context)}
               </Typography>
             </Stack>
@@ -251,13 +258,18 @@ export default function InternshipProjectItem({
                 onClick={() => setDrawerOpen(true)}
                 endIcon={<ArrowForwardRoundedIcon />}
                 sx={{
-                  borderRadius: 20,
                   textTransform: "none",
-                  fontWeight: 600,
-                  px: 2.5,
+                  border: "2px solid",
+                  borderColor: "text.secondary",
+                  color: "text.primary",
+                  "&:hover": {
+                    bgcolor: "#171717",
+                    borderColor: "text.primary",
+                    color: "#ffffff",
+                  },
                 }}
               >
-                {detailLabel}
+                {t("view-details")}
               </Button>
             </Box>
           </Stack>

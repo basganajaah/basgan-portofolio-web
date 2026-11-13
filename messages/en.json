@@ -28,11 +28,12 @@
     "internship": "Internship Projects",
     "academic": "Academic Projects",
     "other": "Other Projects",
+    "team": "Team Members",
     "technologies": "Technologies",
     "responsibilities": "Responsibilities",
     "view-project": "View Project",
     "view-github": "View GitHub",
-    "live-demo": "Live Demo",
+    "view-demo": "View Demo",
     "view-details": "View Details",
     "key-contribution": "Key Contribution",
     "footnote": "Footnote"

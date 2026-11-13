@@ -41,9 +41,9 @@ export const profile = {
   } satisfies LocalizedText,
 
   role: [
-    "Frontend Engineer",
-    "Mobile Developer",
     "Full Stack Developer",
+    // "Frontend Engineer",
+    "Mobile Developer",
     "Software Engineer",
     "UI/UX Designer",
     "Software Tester",

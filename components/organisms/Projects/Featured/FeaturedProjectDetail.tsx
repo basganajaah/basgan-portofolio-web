@@ -92,7 +92,7 @@ export default function FeaturedProjectDetail({
                       height: 7,
                       minWidth: 7,
                       minHeight: 7,
-                      color: "text.primary",
+                      color: "text.secondary",
                       flexShrink: 0,
                     }}
                   />

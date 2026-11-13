@@ -21,6 +21,7 @@ export default function InternshipProject() {
         display: "flex",
         flexDirection: "column",
         gap: { xs: 4, md: 6 },
+        mb: 10,
       }}
     >
       {internshipProjects.map((project, index) => (
@@ -33,7 +34,7 @@ export default function InternshipProject() {
             }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 1, ease: "easeOut" }}
           >
             <Stack direction="row" spacing={1.5} sx={{ alignItems: "center" }}>
               <Typography variant="caption" sx={{ fontWeight: 600 }}>

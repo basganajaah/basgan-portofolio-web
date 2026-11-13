@@ -1,27 +1,56 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-// import type { ReactNode } from "react";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
+
 import ThemeRegistry from "@/components/providers/ThemeRegistry";
-import "../globals.css";
 import ScrollProgress from "@/components/atoms/ScrollProgressBar";
 import { routing } from "@/i18n/routing";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import "../globals.css";
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const plusJakartaSans = localFont({
+  src: [
+    {
+      path: "../../public/fonts/PlusJakartaSans-Light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PlusJakartaSans-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PlusJakartaSans-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PlusJakartaSans-SemiBold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PlusJakartaSans-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/PlusJakartaSans-ExtraBold.ttf",
+      weight: "800",
+      style: "normal",
+    },
+  ],
+  variable: "--font-plus-jakarta-sans",
+  display: "swap",
+  fallback: ["sans-serif"],
 });
 
 export const metadata: Metadata = {
-  title: "Bandyaga A. Sugandi | My Journey Portofolio Website",
+  title: "Bandyaga A. Sugandi | My Journey Portfolio Website",
   description:
     "Fullstack Developer passionate about building modern, responsive, and scalable web applications.",
 };
@@ -46,10 +75,7 @@ export default async function RootLayout({
   setRequestLocale(locale);
 
   return (
-    <html
-      lang={locale}
-      className={`${geistSans.variable} ${geistMono.variable}`}
-    >
+    <html lang={locale} className={plusJakartaSans.variable}>
       <body>
         <Suspense fallback={null}>
           <NextIntlClientProvider

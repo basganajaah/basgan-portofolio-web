@@ -4,7 +4,7 @@ import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import { motion } from "motion/react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
 import FeaturedProjectGallery from "./FeaturedProjectGallery";
 import FeaturedProjectDetail from "./FeaturedProjectDetail";
@@ -20,6 +20,7 @@ export default function FeaturedProjectCard({
 }: FeaturedProjectCardProps) {
   const locale = useLocale() as "id" | "en";
   const localized = (value: { id: string; en: string }) => value[locale];
+  const t = useTranslations("Projects");
 
   const linkButtonSx = {
     borderRadius: "9px",
@@ -37,7 +38,7 @@ export default function FeaturedProjectCard({
       initial={{ y: 35 }}
       whileInView={{ y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
       sx={{ minWidth: 0 }}
     >
       <Stack spacing={{ xs: 2.5, md: 3 }}>
@@ -48,7 +49,7 @@ export default function FeaturedProjectCard({
               variant="overline"
               sx={{ fontWeight: 700, letterSpacing: "0.14em" }}
             >
-              {locale === "id" ? "Proyek Unggulan" : "Featured Projects"}
+              {t("featured")}
             </Typography>
 
             <Divider
@@ -138,8 +139,7 @@ export default function FeaturedProjectCard({
                   sx={{ fontSize: 28, color: "text.secondary", pr: "6px" }}
                 />
                 <Typography sx={{ color: "text.secondary" }}>
-                  {project.teamSize}{" "}
-                  {locale === "id" ? "Anggota Tim" : "Team Members"}
+                  {project.teamSize} {t("team")}
                 </Typography>
               </Stack>
             )}
@@ -226,10 +226,14 @@ export default function FeaturedProjectCard({
                     border: "2px solid",
                     borderColor: "text.secondary",
                     color: "text.primary",
-                    "&:hover": { bgcolor: "#e9e9e9" },
+                    "&:hover": {
+                      bgcolor: "#171717",
+                      borderColor: "text.primary",
+                      color: "#ffffff",
+                    },
                   }}
                 >
-                  {locale === "id" ? "Demo" : "Live Demo"}
+                  {t("view-demo")}
                 </Button>
               )}
             </Stack>

@@ -32,12 +32,12 @@ export default function InternshipProjectDrawer({
 }: InternshipProjectDrawerProps) {
   const locale = useLocale();
 
-  const Localize = (value?: { id: string; en: string }) =>
+  const localized = (value?: { id: string; en: string }) =>
     value ? (locale === "id" ? value.id : value.en) : "";
 
   const t = useTranslations("Projects");
 
-  const footnote = [Localize(project.context), Localize(project.notes)]
+  const footnote = [localized(project.context), localized(project.notes)]
     .filter(Boolean)
     .join("\n\n");
 
@@ -128,7 +128,7 @@ export default function InternshipProjectDrawer({
           x: 0,
         }}
         transition={{
-          duration: 0.35,
+          duration: 1,
           ease: "easeOut",
         }}
       >
@@ -150,7 +150,7 @@ export default function InternshipProjectDrawer({
                 mb: 2,
               }}
             >
-              {Localize(project.title)}
+              {localized(project.title)}
             </Typography>
 
             <Stack
@@ -181,7 +181,7 @@ export default function InternshipProjectDrawer({
               <Typography sx={{ color: "text.secondary" }}>•</Typography>
 
               <Typography sx={{ color: "text.secondary" }}>
-                {Localize(project.context)}
+                {localized(project.context)}
               </Typography>
             </Stack>
           </Box>
@@ -208,7 +208,7 @@ export default function InternshipProjectDrawer({
                   >
                     <Image
                       src={image}
-                      alt={`${Localize(project.title)} - ${index + 1}`}
+                      alt={`${localized(project.title)} - ${index + 1}`}
                       fill
                       sizes="(max-width: 680px) 100vw, 680px"
                       style={{ objectFit: "cover" }}
@@ -227,7 +227,7 @@ export default function InternshipProjectDrawer({
               color: "text.secondary",
             }}
           >
-            {Localize(project.description)}
+            {localized(project.description)}
           </Typography>
 
           {/* Unique Facts */}
@@ -265,7 +265,7 @@ export default function InternshipProjectDrawer({
                       lineHeight: 1.2,
                     }}
                   >
-                    {Localize(fact.value)}
+                    {localized(fact.value)}
                   </Typography>
 
                   <Typography
@@ -278,7 +278,7 @@ export default function InternshipProjectDrawer({
                       wordBreak: "break-word",
                     }}
                   >
-                    {Localize(fact.label)}
+                    {localized(fact.label)}
                   </Typography>
                 </Box>
               ))}
@@ -315,7 +315,7 @@ export default function InternshipProjectDrawer({
                         minWidth: 7,
                         minHeight: 7,
                         borderRadius: "50%",
-                        bgcolor: "text.primary",
+                        color: "text.secondary",
                         flexShrink: 0,
                       }}
                     />
@@ -327,7 +327,7 @@ export default function InternshipProjectDrawer({
                         color: "text.secondary",
                       }}
                     >
-                      {Localize(contribution)}
+                      {localized(contribution)}
                     </Typography>
                   </Box>
                 ))}

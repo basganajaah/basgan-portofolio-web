@@ -13,7 +13,7 @@
   "Hero": {
     "availability": "Terbuka untuk peluang baru",
     "greeting": "Halo, Saya",
-    "description": "Lulusan Teknik Komputer dan Informatika dengan spesialisasi dalam pengembangan aplikasi web dan mobile full-stack, serta memiliki fokus kuat pada teknologi frontend. Berpengalaman dalam integrasi API, desain UI/UX, pengujian perangkat lunak (software testing), dan manajemen basis data. Memiliki antusiasme tinggi untuk membangun solusi digital yang efektif serta berkolaborasi dalam berbagai proyek inovatif menggunakan teknologi modern.",
+    "description": "Lulusan Teknik Komputer dan Informatika dengan spesialisasi dalam pengembangan aplikasi web dan mobile full-stack, serta memiliki fokus kuat pada teknologi frontend. Berpengalaman dalam integrasi API, desain UI/UX, pengujian perangkat lunak, dan manajemen basis data. Antusias untuk membangun solusi digital yang efektif serta berkolaborasi dalam berbagai proyek inovatif menggunakan teknologi modern.",
     "explore": "Jelajahi Karya Saya",
     "contact": "Hubungi Saya",
     "scroll": "Gulir untuk menjelajah",
@@ -28,11 +28,12 @@
     "internship": "Proyek Magang",
     "academic": "Proyek Akademik",
     "other": "Proyek Lainnya",
+    "team": "Anggota Tim",
     "technologies": "Teknologi",
     "responsibilities": "Tanggung Jawab",
     "view-project": "Lihat Proyek",
     "view-github": "Lihat GitHub",
-    "live-demo": "Demo Langsung",
+    "view-demo": "Lihat Demo",
     "view-details": "Lihat Detail",
     "key-contribution": "Kontribusi Utama",
     "footnote": "Catatan"
