@@ -20,7 +20,7 @@ export default function InternshipProject() {
           display: "flex",
           flexDirection: "column",
           gap: { xs: 2, md: 2 },
-          mb: 10,
+          mb: 4,
         }}
       >
         {internshipProjects.map((project, index) => (
