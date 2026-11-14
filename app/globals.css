@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #eef2ff 100%);
+  --background: "#eef2ff"
   --foreground: #171717;
 }
 
@@ -9,14 +9,19 @@ html {
   scroll-behavior: smooth;
   max-width: 100%;
   overflow-x: hidden;
+
+  /* Gradient menjadi background utama viewport */
+  background: var(--background);
+  background-attachment: fixed;
 }
 
 body {
   min-height: 100vh;
   max-width: 100%;
   overflow-x: hidden;
+
+  /* Jangan menimpa background html */
   background: var(--background);
-  background-attachment: fixed;
   color: var(--foreground);
   font-family: var(--font-plus-jakarta-sans), sans-serif;
 }
@@ -26,11 +31,23 @@ body {
   ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
+    background: transparent;
   }
 
-  ::-webkit-scrollbar-track {
+  ::-webkit-scrollbar-track,
+  ::-webkit-scrollbar-track-piece {
+    background: var(--background);
+    background-color: var(--background);
+  }
+
+  ::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  ::-webkit-scrollbar-corner {
     background: transparent !important;
-    background-color: transparent !important;
   }
 
   ::-webkit-scrollbar-thumb {
@@ -47,7 +64,7 @@ body {
 
 /* Firefox */
 @supports not selector(::-webkit-scrollbar) {
-  * {
+  html {
     scrollbar-width: thin;
     scrollbar-color: #171717 transparent;
   }

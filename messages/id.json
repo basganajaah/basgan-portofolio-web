@@ -17,7 +17,11 @@
     "explore": "Jelajahi Karya Saya",
     "contact": "Hubungi Saya",
     "scroll": "Gulir untuk menjelajah",
-    "find": "Temukan saya di"
+    "find": "Temukan saya di",
+    "top-badge": "Kreatif",
+    "top-badge-subtitle": "Pengembang Digital",
+    "bottom-badge": "Terbuka",
+    "bottom-badge-subtitle": "Mari Berkolaborasi!"
   },
 
   "Projects": {
@@ -36,6 +40,10 @@
     "view-demo": "Lihat Demo",
     "view-details": "Lihat Detail",
     "key-contribution": "Kontribusi Utama",
-    "footnote": "Catatan"
+    "footnote": "Catatan",
+    "previous-project": "Proyek sebelumnya",
+    "next-project": "Proyek berikutnya",
+    "about-project": "Tentang Proyek",
+    "roles": "Peran"
   }
 }

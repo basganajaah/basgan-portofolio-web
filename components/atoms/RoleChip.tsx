@@ -1,5 +1,3 @@
-"use client";
-
 import { Chip as MuiChip, type ChipProps as MuiChipProps } from "@mui/material";
 
 interface CustomChipProps extends Omit<MuiChipProps, "variant"> {
@@ -27,7 +25,7 @@ export default function Chip({
           // border: "1px solid",
           borderColor: "#171717",
           // color: "#171717",
-          // backgroundColor: "transparent",
+          backgroundColor: "transparent",
         }),
         ...(variant === "filled" && {
           backgroundColor: "#171717",

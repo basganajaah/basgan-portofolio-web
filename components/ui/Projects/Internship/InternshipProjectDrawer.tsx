@@ -15,7 +15,7 @@ import {
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import CircleIcon from "@mui/icons-material/Circle";
 import type { Project } from "@/types/project";
-import TechStackChip from "@/components/atoms/TechStackChip";
+import RoleChip from "@/components/atoms/RoleChip"
 
 interface InternshipProjectDrawerProps {
   project: Project;
@@ -357,7 +357,7 @@ export default function InternshipProjectDrawer({
               }}
             >
               {project.technologies.map((technology) => (
-                <TechStackChip key={technology} label={technology} />
+                <RoleChip key={technology} label={technology} />
               ))}
             </Box>
           </Box>

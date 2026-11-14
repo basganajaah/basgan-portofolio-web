@@ -41,6 +41,9 @@ importers:
       react-dom:
         specifier: 19.3.0
         version: 19.3.0(react@19.3.0)
+      typewriter-effect:
+        specifier: ^3.3.0
+        version: 3.3.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
     devDependencies:
       '@tailwindcss/turbopack':
         specifier: 4.3.3
@@ -2472,6 +2475,17 @@ packages:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
     hasBin: true
+
+  typewriter-effect@3.3.0:
+    resolution: {integrity: sha512-4pHTt5WroYA92ZhOagEMAVFZwXVFn3qUIWMBAetSIhSCLLvqcDkfL13n3OqtbyiQFlI6iEeo9Ua/YrypU1PjjA==}
+    hasBin: true
+    peerDependencies:
+      puppeteer: '>=22.0.0'
+      react: '>=17.0.0'
+      react-dom: '>=17.0.0'
+    peerDependenciesMeta:
+      puppeteer:
+        optional: true
 
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
@@ -5051,6 +5065,11 @@ snapshots:
       - supports-color
 
   typescript@5.9.3: {}
+
+  typewriter-effect@3.3.0(react-dom@19.3.0(react@19.3.0))(react@19.3.0):
+    dependencies:
+      react: 19.3.0
+      react-dom: 19.3.0(react@19.3.0)
 
   unbox-primitive@1.1.0:
     dependencies:

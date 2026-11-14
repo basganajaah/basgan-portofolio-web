@@ -8,7 +8,8 @@ import { Box, Button, Stack, Typography } from "@mui/material";
 import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import type { Project } from "@/types/project";
 import InternshipProjectDrawer from "./InternshipProjectDrawer";
-import TechStackChip from "@/components/atoms/TechStackChip";
+import RoleChip from "@/components/atoms/RoleChip";
+import { getLocalizedText, type Locale } from "@/lib/utils";
 
 interface InternshipProjectItemProps {
   project: Project;
@@ -19,14 +20,11 @@ export default function InternshipProjectItem({
   project,
   index,
 }: InternshipProjectItemProps) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const [drawerOpen, setDrawerOpen] = useState(false);
 
   const isReversed = index % 2 !== 0;
   const image = project.gallery?.[0];
-
-  const Localize = (value?: { id: string; en: string }) =>
-    value ? (locale === "id" ? value.id : value.en) : "";
 
   const t = useTranslations("Projects");
   return (
@@ -72,7 +70,7 @@ export default function InternshipProjectItem({
               >
                 <Image
                   src={image}
-                  alt={Localize(project.title)}
+                  alt={getLocalizedText(project.title, locale)}
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
@@ -98,7 +96,7 @@ export default function InternshipProjectItem({
                   mb: 1.5,
                 }}
               >
-                {Localize(project.title)}
+                {getLocalizedText(project.title, locale)}
               </Typography>
 
               <Typography
@@ -107,7 +105,7 @@ export default function InternshipProjectItem({
                   color: "text.secondary",
                 }}
               >
-                {Localize(project.description)}
+                {getLocalizedText(project.description, locale)}
               </Typography>
             </Box>
 
@@ -141,7 +139,7 @@ export default function InternshipProjectItem({
               <Typography
                 sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
               >
-                {Localize(project.context)}
+                {getLocalizedText(project.context, locale)}
               </Typography>
             </Stack>
 
@@ -175,7 +173,7 @@ export default function InternshipProjectItem({
                         lineHeight: 1.3,
                       }}
                     >
-                      {Localize(fact.value)}
+                      {getLocalizedText(fact.value, locale)}
                     </Typography>
 
                     <Typography
@@ -188,7 +186,7 @@ export default function InternshipProjectItem({
                         color: "text.secondary",
                       }}
                     >
-                      {Localize(fact.label)}
+                      {getLocalizedText(fact.label, locale)}
                     </Typography>
                   </Box>
                 ))}
@@ -205,7 +203,7 @@ export default function InternshipProjectItem({
                     gap: 0.75,
                   }}
                 >
-                  {project.shortContributions.map((item, index) => (
+                  {project.shortContributions.map((scItem, index) => (
                     <Box
                       key={`${project.id}-contribution-${index}`}
                       sx={{
@@ -231,7 +229,7 @@ export default function InternshipProjectItem({
                         variant="caption"
                         color="text.secondary"
                       >
-                        {Localize(item)}
+                        {getLocalizedText(scItem, locale)}
                       </Typography>
                     </Box>
                   ))}
@@ -247,7 +245,7 @@ export default function InternshipProjectItem({
               }}
             >
               {project.technologies.map((technology) => (
-                <TechStackChip key={technology} label={technology} />
+                <RoleChip key={technology} label={technology} />
               ))}
             </Box>
 

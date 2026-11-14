@@ -49,7 +49,6 @@ export default function FeaturedProjectGallery({
         minWidth: 0,
       }}
     >
-      {/* Main Image with Smooth Framer Motion Crossfade */}
       <Box
         sx={{
           position: "relative",

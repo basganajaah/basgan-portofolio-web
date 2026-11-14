@@ -3,7 +3,10 @@
 import { Box, Button, Container, Typography, Stack } from "@mui/material";
 import Grid from "@mui/material/Grid";
 import { motion } from "motion/react";
-
+import Typewriter from "typewriter-effect";
+import CodeRoundedIcon from "@mui/icons-material/CodeRounded";
+import WorkspacePremiumRoundedIcon from "@mui/icons-material/WorkspacePremiumRounded";
+import ProfileBadge from "@/components/atoms/ProfileBadge";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import {
   WhatsApp,
@@ -94,6 +97,22 @@ export default function Hero() {
               }}
             >
               <Typography
+                component="p"
+                sx={{
+                  fontSize: {
+                    xs: "2rem",
+                    sm: "2.5rem",
+                    md: "3rem",
+                    lg: "3.5rem",
+                  },
+                  fontWeight: 300,
+                  color: "text.primary",
+                }}
+              >
+                {t("greeting")}
+              </Typography>
+
+              <Typography
                 component="h1"
                 sx={{
                   fontSize: {
@@ -102,16 +121,31 @@ export default function Hero() {
                     md: "3rem",
                     lg: "3.5rem",
                   },
-                  lineHeight: 1.02,
-                  fontWeight: 750,
-                  letterSpacing: "-0.075em",
+                  lineHeight: 1.15,
+                  fontWeight: 700,
+                  letterSpacing: "-0.04em",
                   color: "text.primary",
                   mb: 2,
+                  minHeight: "1.2em",
                 }}
               >
-                <span className="font-light">{t("greeting")}</span>
-                <br />
-                Bandyaga A. Sugandi
+                <Typewriter
+                  options={{
+                    delay: 65,
+                    deleteSpeed: 40,
+                    loop: true,
+                  }}
+                  onInit={(typewriter) => {
+                    typewriter
+                      .typeString("Bandyaga Adiansyah.")
+                      .pauseFor(1000)
+                      .deleteChars(9)
+                      .pauseFor(300)
+                      .typeString(". Sugandi.")
+                      .pauseFor(2000)
+                      .start();
+                  }}
+                />
               </Typography>
             </motion.div>
 
@@ -327,7 +361,28 @@ export default function Hero() {
                 delay: 0.2,
                 ease: [0.22, 1, 0.36, 1],
               }}
+              className="relative w-full max-w-85 md:max-w-100"
             >
+              <ProfileBadge
+                icon={<CodeRoundedIcon />}
+                title={t("top-badge")}
+                subtitle={t("top-badge-subtitle")}
+                sx={{
+                  top: { xs: 8, sm: 12 },
+                  right: { xs: -6, sm: -9, md: -12 },
+                }}
+                delay={0.4}
+              />
+              <ProfileBadge
+                icon={<WorkspacePremiumRoundedIcon />}
+                title={t("bottom-badge")}
+                subtitle={t("bottom-badge-subtitle")}
+                sx={{
+                  bottom: { xs: -4, sm: -6 },
+                  left: { xs: -6, sm: -9, md: -12 },
+                }}
+                delay={0.6}
+              />
               <Box
                 sx={{
                   width: "100%",

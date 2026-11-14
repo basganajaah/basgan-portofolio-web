@@ -17,7 +17,11 @@
     "explore": "Explore My Work",
     "contact": "Get in Touch",
     "scroll": "Scroll to explore",
-    "find": "Find me on"
+    "find": "Find me on",
+    "top-badge": "Creative",
+    "top-badge-subtitle": "Digital Developer",
+    "bottom-badge": "Available",
+    "bottom-badge-subtitle": "Let's Connect!"
   },
 
   "Projects": {
@@ -36,6 +40,10 @@
     "view-demo": "View Demo",
     "view-details": "View Details",
     "key-contribution": "Key Contribution",
-    "footnote": "Footnote"
+    "footnote": "Footnote",
+    "previous-project": "Previous project",
+    "next-project": "Next project",
+    "about-project": "About the Project",
+    "roles": "Roles"
   }
 }

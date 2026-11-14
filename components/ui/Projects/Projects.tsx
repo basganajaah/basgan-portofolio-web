@@ -1,6 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import { useTranslations } from "next-intl";
-import FeaturedProject from "@/components/organisms/Projects/Featured/FeaturedProject";
+import FeaturedProject from "@/components/ui/Projects/Featured/FeaturedProject";
 import InternshipProject from "./Internship/InternshipProject";
 import AcademicProject from "./Academic/AcademicProject";
 

@@ -8,18 +8,16 @@ import { useLocale, useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
 import FeaturedProjectGallery from "./FeaturedProjectGallery";
 import FeaturedProjectDetail from "./FeaturedProjectDetail";
+import { getLocalizedText, type Locale } from "@/lib/utils";
 
 interface FeaturedProjectCardProps {
   project: Project;
-  index: number;
 }
 
 export default function FeaturedProjectCard({
   project,
-  index,
 }: FeaturedProjectCardProps) {
-  const locale = useLocale() as "id" | "en";
-  const localized = (value: { id: string; en: string }) => value[locale];
+  const locale = useLocale() as Locale;
   const t = useTranslations("Projects");
 
   const linkButtonSx = {
@@ -35,36 +33,18 @@ export default function FeaturedProjectCard({
   return (
     <Box
       component={motion.article}
-      initial={{ y: 35 }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+      initial={{
+        opacity: 0,
+        y: 40,
+      }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 1, ease: "easeOut" }}
       sx={{ minWidth: 0 }}
     >
       <Stack spacing={{ xs: 2.5, md: 3 }}>
         {/* Project Heading */}
         <Box>
-          <Stack direction="row" spacing={1.5} sx={{ alignItems: "center" }}>
-            <Typography
-              variant="overline"
-              sx={{ fontWeight: 700, letterSpacing: "0.14em" }}
-            >
-              {t("featured")}
-            </Typography>
-
-            <Divider
-              sx={{
-                flex: 1,
-                borderBottomWidth: 2,
-                borderColor: "#171717",
-              }}
-            />
-
-            <Typography variant="caption" sx={{ fontWeight: 600 }}>
-              {String(index + 1).padStart(2, "0")}
-            </Typography>
-          </Stack>
-
           <Typography
             variant="h3"
             sx={{
@@ -75,7 +55,7 @@ export default function FeaturedProjectCard({
               lineHeight: 1.2,
             }}
           >
-            {localized(project.title)}
+            {getLocalizedText(project.title, locale)}
           </Typography>
 
           <Stack
@@ -91,7 +71,7 @@ export default function FeaturedProjectCard({
           >
             {project.context && (
               <Typography sx={{ color: "text.secondary" }}>
-                {localized(project.context)}
+                {getLocalizedText(project.context, locale)}
               </Typography>
             )}
 
@@ -111,7 +91,7 @@ export default function FeaturedProjectCard({
 
             {project.organization && (
               <Typography sx={{ color: "text.secondary" }}>
-                {localized(project.organization)}
+                {getLocalizedText(project.organization, locale)}
               </Typography>
             )}
 

@@ -3,7 +3,7 @@ import type { Project } from "@/types/project";
 export const projects: Project[] = [
   // FEATURED PROJECTS
   {
-    id: "sia-sekar-telkom",
+    id: "sia-yst",
     category: "featured",
     title: {
       id: "Sistem Informasi Akuntansi - Yayasan Sekar Telkom",
@@ -131,7 +131,7 @@ export const projects: Project[] = [
 
   // INTERNSHIP PROJECTS
   {
-    id: "NTI-Benso",
+    id: "nti-benso",
     category: "internship",
     title: {
       id: "Analitik Jaringan Telco - Benchmark Solution",
@@ -242,7 +242,7 @@ export const projects: Project[] = [
     gallery: ["/images/projects/BENSO-01.jpeg"],
   },
   {
-    id: "NTI-POI-CEI",
+    id: "nti-poi-cei",
     category: "internship",
     title: {
       id: "Analitik Jaringan Telco - POI CEI 7 KQI",
@@ -367,5 +367,49 @@ export const projects: Project[] = [
       },
     ],
     gallery: ["/images/projects/POI-CEI-01.jpeg"],
+  },
+
+  // Academic
+  {
+    id: "metacellular",
+    category: "academic",
+    title: {
+      id: "MetaCellular",
+      en: "MetaCellular",
+    },
+    description: {
+      id: "",
+      en: "",
+    },
+    period: "2025",
+    technologies: ["C", "CMD", "Dev C++"],
+  },
+  {
+    id: "end-cryptionz",
+    category: "academic",
+    title: {
+      id: "End-Cryptionz",
+      en: "End-Cryptionz",
+    },
+    description: {
+      id: "Sistem untuk mencatat stok barang, memantau persediaan, dan mengelola transaksi inventaris.",
+      en: "A system for recording stock, monitoring supplies, and managing inventory transactions.",
+    },
+    period: "2025",
+    technologies: ["React", "Node.js", "Express", "MySQL"],
+  },
+  {
+    id: "academic-project-3",
+    category: "academic",
+    title: {
+      id: "Website Pemesanan Layanan",
+      en: "Service Booking Website",
+    },
+    description: {
+      id: "Website untuk menampilkan layanan dan memfasilitasi proses pemesanan secara online.",
+      en: "A website for presenting services and facilitating online bookings.",
+    },
+    period: "2024",
+    technologies: ["HTML", "CSS", "JavaScript", "PHP"],
   },
 ];

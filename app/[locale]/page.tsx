@@ -1,6 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
-import Hero from "@/components/organisms/Hero";
-import Projects from "@/components/organisms/Projects/Projects"
+import Hero from "@/components/ui/Hero";
+import Projects from "@/components/ui/Projects/Projects";
 import ScrollIndicator from "@/components/atoms/ScrollIndicator";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Projects/>
+        <Projects />
       </main>
       <ScrollIndicator />
     </>

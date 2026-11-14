@@ -1,11 +1,9 @@
-"use client";
-
 import { Box, Divider, Stack, Typography } from "@mui/material";
 import CircleIcon from "@mui/icons-material/Circle";
 import { useLocale, useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
-import TechStackChip from "@/components/atoms/TechStackChip";
 import RoleChip from "@/components/atoms/RoleChip";
+import { getLocalizedText, type Locale } from "@/lib/utils";
 
 interface FeaturedProjectDetailProps {
   project: Project;
@@ -14,10 +12,8 @@ interface FeaturedProjectDetailProps {
 export default function FeaturedProjectDetail({
   project,
 }: FeaturedProjectDetailProps) {
-  const locale = useLocale() as "id" | "en";
+  const locale = useLocale() as Locale;
   const t = useTranslations("Projects");
-
-  const localized = (value: { id: string; en: string }) => value[locale];
 
   return (
     <Stack spacing={{ xs: 2.5, md: 3 }}>
@@ -41,7 +37,7 @@ export default function FeaturedProjectDetail({
         <Stack direction={"column"} sx={{ gap: 1 }}>
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
-              {locale === "id" ? "Tentang Proyek" : "About the Project"}
+              {t("about-project")}
             </Typography>
 
             <Typography
@@ -51,7 +47,7 @@ export default function FeaturedProjectDetail({
                 color: "text.secondary",
               }}
             >
-              {localized(project.description)}
+              {getLocalizedText(project.description, locale)}
             </Typography>
 
             {/* Problem Statement */}
@@ -65,7 +61,7 @@ export default function FeaturedProjectDetail({
                   fontStyle: "italic",
                 }}
               >
-                {localized(project.notes)}
+                {getLocalizedText(project.notes, locale)}
               </Typography>
             )}
           </Box>
@@ -104,7 +100,7 @@ export default function FeaturedProjectDetail({
                       color: "text.secondary",
                     }}
                   >
-                    {localized(contribution)}
+                    {getLocalizedText(contribution, locale)}
                   </Typography>
                 </Stack>
               ))}
@@ -133,7 +129,7 @@ export default function FeaturedProjectDetail({
         {project.roles && project.roles.length > 0 && (
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
-              {locale === "id" ? "Peran" : "Roles"}
+              {t("roles")}
             </Typography>
 
             <Stack
@@ -165,7 +161,7 @@ export default function FeaturedProjectDetail({
             sx={{ flexWrap: "wrap" }}
           >
             {project.technologies.map((technology) => (
-              <TechStackChip key={technology} label={technology} />
+              <RoleChip key={technology} label={technology} />
             ))}
           </Stack>
         </Box>
