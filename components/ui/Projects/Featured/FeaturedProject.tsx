@@ -18,7 +18,7 @@ export default function FeaturedProject() {
           display: "flex",
           flexDirection: "column",
           gap: { xs: 2, md: 4 },
-          mb: 10,
+          mb: 4,
         }}
       >
         {featuredProjects.map((project) => (

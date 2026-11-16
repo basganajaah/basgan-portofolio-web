@@ -15,11 +15,10 @@ import {
   Email,
   Telegram,
 } from "@mui/icons-material";
-
 import { useTranslations } from "next-intl";
 import { profile } from "@/data/profile";
-
 import RoleChip from "@/components/atoms/RoleChip";
+import { itemVariants } from "@/lib/utils";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -165,7 +164,15 @@ export default function Hero() {
                 sx={{ flexWrap: "wrap", mb: 2 }}
               >
                 {profile.role.map((role) => (
-                  <RoleChip key={role} label={role} />
+                  <motion.div
+                    key={role}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <RoleChip key={role} label={role} />
+                  </motion.div>
                 ))}
               </Stack>
             </motion.div>

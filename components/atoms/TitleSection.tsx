@@ -32,7 +32,7 @@ export default function TitleSection({
     <Divider
       sx={{
         flex: 1,
-        borderBottomWidth: 2,
+        borderBottomWidth: 4,
         borderColor: "#171717",
       }}
     />

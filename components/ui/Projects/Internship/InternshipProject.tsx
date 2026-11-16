@@ -12,7 +12,7 @@ export default function InternshipProject() {
 
   return (
     <>
-      <TitleSection category="internship" reverse={true}/>
+      <TitleSection category="internship" reverse={true} />
       <Box
         component="section"
         id="internship-projects"
@@ -24,11 +24,11 @@ export default function InternshipProject() {
         }}
       >
         {internshipProjects.map((project, index) => (
-          <Box key={project.id}>
-            <Box sx={{ mt: { xs: 3, md: 4 } }}>
-              <InternshipProjectItem project={project} index={index} />
-            </Box>
-          </Box>
+          <InternshipProjectItem
+            key={project.id}
+            project={project}
+            index={index}
+          />
         ))}
       </Box>
     </>

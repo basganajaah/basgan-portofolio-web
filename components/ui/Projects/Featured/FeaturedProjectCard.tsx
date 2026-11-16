@@ -3,12 +3,14 @@
 import { Box, Button, Divider, Stack, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { SiGitlab as GitLabIcon } from "@icons-pack/react-simple-icons";
 import { motion } from "motion/react";
 import { useLocale, useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
 import FeaturedProjectGallery from "./FeaturedProjectGallery";
 import FeaturedProjectDetail from "./FeaturedProjectDetail";
-import { getLocalizedText, type Locale } from "@/lib/utils";
+import { getLocalizedText, type Locale, itemVariants } from "@/lib/utils";
 
 interface FeaturedProjectCardProps {
   project: Project;
@@ -156,65 +158,88 @@ export default function FeaturedProjectCard({
               }}
             >
               {project.links?.github && (
-                <Button
-                  component="a"
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="contained"
-                  endIcon={<ArrowOutwardIcon />}
-                  sx={{
-                    ...linkButtonSx,
-                    bgcolor: "text.primary",
-                    color: "background.paper",
-                    "&:hover": { bgcolor: "grey.800" },
-                  }}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  GitHub
-                </Button>
+                  <Button
+                    component="a"
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="contained"
+                    startIcon={<GitHubIcon />}
+                    endIcon={<ArrowOutwardIcon />}
+                    sx={{
+                      ...linkButtonSx,
+                      bgcolor: "text.primary",
+                      color: "background.paper",
+                      "&:hover": { bgcolor: "grey.800" },
+                    }}
+                  >
+                    GitHub
+                  </Button>
+                </motion.div>
               )}
 
               {project.links?.gitlab && (
-                <Button
-                  component="a"
-                  href={project.links.gitlab}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="contained"
-                  endIcon={<ArrowOutwardIcon />}
-                  sx={{
-                    ...linkButtonSx,
-                    bgcolor: "text.primary",
-                    color: "background.paper",
-                    "&:hover": { bgcolor: "grey.800" },
-                  }}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  GitLab
-                </Button>
+                  <Button
+                    component="a"
+                    href={project.links.gitlab}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="contained"
+                    startIcon={<GitLabIcon size={16} />}
+                    endIcon={<ArrowOutwardIcon />}
+                    sx={{
+                      ...linkButtonSx,
+                      bgcolor: "text.primary",
+                      color: "background.paper",
+                      "&:hover": { bgcolor: "grey.800" },
+                    }}
+                  >
+                    GitLab
+                  </Button>
+                </motion.div>
               )}
 
               {project.links?.demo && (
-                <Button
-                  component="a"
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="outlined"
-                  endIcon={<ArrowOutwardIcon />}
-                  sx={{
-                    ...linkButtonSx,
-                    border: "2px solid",
-                    borderColor: "text.secondary",
-                    color: "text.primary",
-                    "&:hover": {
-                      bgcolor: "#171717",
-                      borderColor: "text.primary",
-                      color: "#ffffff",
-                    },
-                  }}
+                <motion.div
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                 >
-                  {t("view-demo")}
-                </Button>
+                  <Button
+                    component="a"
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="outlined"
+                    endIcon={<ArrowOutwardIcon />}
+                    sx={{
+                      ...linkButtonSx,
+                      border: "2px solid",
+                      borderColor: "text.secondary",
+                      color: "text.primary",
+                      "&:hover": {
+                        bgcolor: "#171717",
+                        borderColor: "text.primary",
+                        color: "#ffffff",
+                      },
+                    }}
+                  >
+                    {t("view-demo")}
+                  </Button>
+                </motion.div>
               )}
             </Stack>
           </Stack>

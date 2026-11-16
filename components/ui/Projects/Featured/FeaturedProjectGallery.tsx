@@ -6,6 +6,9 @@ import { Box } from "@mui/material";
 import { motion, AnimatePresence } from "motion/react";
 import { useLocale } from "next-intl";
 import type { Project } from "@/types/project";
+import { useGalleryImageErrors } from "@/hooks/useImageError";
+import ProjectImageFallback from "@/components/atoms/ProjectImageFallback";
+import { getLocalizedText, type Locale } from "@/lib/utils";
 
 interface FeaturedProjectGalleryProps {
   project: Project;
@@ -14,14 +17,15 @@ interface FeaturedProjectGalleryProps {
 export default function FeaturedProjectGallery({
   project,
 }: FeaturedProjectGalleryProps) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
+  const { isError, handleError } = useGalleryImageErrors();
   const images = (project.gallery ?? []).filter(
-    (image): image is string => Boolean(image),
+    (image): image is string => Boolean(image) && !isError(image),
   );
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
-  const activeImage = images[activeIndex] ?? "/images/profile.jpeg";
+  const activeImage = images[activeIndex];
 
   useEffect(() => {
     if (images.length <= 1 || isHovered) return;
@@ -65,25 +69,37 @@ export default function FeaturedProjectGallery({
           isolation: "isolate",
         }}
       >
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={`${locale}-${project.id}-${activeIndex}`}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            style={{ position: "absolute", inset: 0, width: "100%", height: "100%" }}
-          >
-            <Image
-              src={activeImage}
-              alt={`${project.title.en} screenshot`}
-              fill
-              priority={activeIndex === 0}
-              sizes="(max-width: 900px) 100vw, 1100px"
-              style={{ objectFit: "cover", objectPosition: "center" }}
-            />
-          </motion.div>
-        </AnimatePresence>
+        {activeImage ? (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={`${locale}-${project.id}-${activeIndex}`}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              style={{
+                position: "absolute",
+                inset: 0,
+                width: "100%",
+                height: "100%",
+              }}
+            >
+              <Image
+                src={activeImage}
+                alt={`${project.title.en} screenshot`}
+                fill
+                priority={activeIndex === 0}
+                sizes="(max-width: 900px) 100vw, 1100px"
+                style={{ objectFit: "cover", objectPosition: "center" }}
+                onError={() => handleError(activeImage)}
+              />
+            </motion.div>
+          </AnimatePresence>
+        ) : (
+          <ProjectImageFallback
+            title={getLocalizedText(project.title, locale)}
+          />
+        )}
       </Box>
 
       {/* Thumbnail Gallery */}
@@ -159,6 +175,7 @@ export default function FeaturedProjectGallery({
                 fill
                 sizes="130px"
                 style={{ objectFit: "cover", objectPosition: "center" }}
+                onError={() => handleError(image)}
               />
             </Box>
           ))}

@@ -9,7 +9,9 @@ import ArrowForwardRoundedIcon from "@mui/icons-material/ArrowForwardRounded";
 import type { Project } from "@/types/project";
 import InternshipProjectDrawer from "./InternshipProjectDrawer";
 import RoleChip from "@/components/atoms/RoleChip";
-import { getLocalizedText, type Locale } from "@/lib/utils";
+import { getLocalizedText, itemVariants, type Locale } from "@/lib/utils";
+import { useImageError } from "@/hooks/useImageError";
+import ProjectImageFallback from "@/components/atoms/ProjectImageFallback";
 
 interface InternshipProjectItemProps {
   project: Project;
@@ -22,6 +24,7 @@ export default function InternshipProjectItem({
 }: InternshipProjectItemProps) {
   const locale = useLocale() as Locale;
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const { hasError, handleError } = useImageError();
 
   const isReversed = index % 2 !== 0;
   const image = project.gallery?.[0];
@@ -42,8 +45,9 @@ export default function InternshipProjectItem({
           sx={{
             display: "grid",
             gridTemplateColumns: { xs: "1fr", md: "1fr 1fr" },
-            gap: { xs: 3, md: 5 },
+            gap: { xs: 2, md: 4 },
             alignItems: "center",
+            mt: { xs: 1, md: 2 },
           }}
         >
           {/* Project Image */}
@@ -57,7 +61,7 @@ export default function InternshipProjectItem({
               bgcolor: "action.hover",
             }}
           >
-            {image && (
+            {image && !hasError ? (
               <motion.div
                 whileHover={{ scale: 1.035 }}
                 transition={{ duration: 1, ease: "easeOut" }}
@@ -74,8 +78,13 @@ export default function InternshipProjectItem({
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
                   style={{ objectFit: "cover" }}
+                  onError={handleError}
                 />
               </motion.div>
+            ) : (
+              <ProjectImageFallback
+                title={getLocalizedText(project.title, locale)}
+              />
             )}
           </Box>
 
@@ -88,16 +97,59 @@ export default function InternshipProjectItem({
             }}
           >
             <Box>
-              <Typography
-                variant="h5"
+              <Stack
+                direction="column"
+                useFlexGap
                 sx={{
-                  fontWeight: 700,
-                  lineHeight: 1.3,
-                  mb: 1.5,
+                  mb: 1.25,
+                  gap: 1,
                 }}
               >
-                {getLocalizedText(project.title, locale)}
-              </Typography>
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                  }}
+                >
+                  {getLocalizedText(project.title, locale)}
+                </Typography>
+
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  useFlexGap
+                  sx={{
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                    rowGap: 0.5,
+                  }}
+                >
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      fontSize: { xs: 12, md: 16 },
+                      alignItems: "center",
+                      letterSpacing: 1,
+                      color: "text.secondary",
+                    }}
+                  >
+                    {getLocalizedText(project.organization, locale)}
+                  </Typography>
+
+                  <Typography sx={{ color: "text.secondary" }}>•</Typography>
+
+                  <Typography
+                    sx={{
+                      fontSize: { xs: 12, md: 16 },
+                      alignItems: "center",
+                      letterSpacing: 1,
+                      color: "text.secondary",
+                    }}
+                  >
+                    {project.period}
+                  </Typography>
+                </Stack>
+              </Stack>
 
               <Typography
                 sx={{
@@ -109,39 +161,12 @@ export default function InternshipProjectItem({
               </Typography>
             </Box>
 
-            {/* Role and Period */}
-            <Stack
-              direction="row"
-              spacing={1}
-              useFlexGap
-              sx={{
-                alignItems: "center",
-                flexWrap: "wrap",
-                rowGap: 0.5,
-              }}
+            {/* Role */}
+            <Typography
+              sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
             >
-              <Typography
-                sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
-              >
-                {project.roles?.join(", ")}
-              </Typography>
-
-              <Typography sx={{ color: "text.secondary" }}>•</Typography>
-
-              <Typography
-                sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
-              >
-                {project.period}
-              </Typography>
-
-              <Typography sx={{ color: "text.secondary" }}>•</Typography>
-
-              <Typography
-                sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
-              >
-                {getLocalizedText(project.context, locale)}
-              </Typography>
-            </Stack>
+              {project.roles?.join(", ")}
+            </Typography>
 
             {/* Unique Facts */}
             {project.uniqueFacts && project.uniqueFacts.length > 0 && (
@@ -181,7 +206,7 @@ export default function InternshipProjectItem({
                       color="text.secondary"
                       sx={{
                         display: "block",
-                        mt: 0.5,
+                        mt: 1,
                         lineHeight: 1.4,
                         color: "text.secondary",
                       }}
@@ -245,7 +270,15 @@ export default function InternshipProjectItem({
               }}
             >
               {project.technologies.map((technology) => (
-                <RoleChip key={technology} label={technology} />
+                <motion.div
+                  key={technology}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <RoleChip key={technology} label={technology} />
+                </motion.div>
               ))}
             </Box>
 
@@ -256,6 +289,7 @@ export default function InternshipProjectItem({
                 onClick={() => setDrawerOpen(true)}
                 endIcon={<ArrowForwardRoundedIcon />}
                 sx={{
+                  borderRadius: 1,
                   textTransform: "none",
                   border: "2px solid",
                   borderColor: "text.secondary",

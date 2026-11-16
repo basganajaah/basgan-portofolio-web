@@ -18,22 +18,31 @@ export const profile = {
   } satisfies LocalizedText,
 
   education: {
-    highSchool: {
-      id: "Sekolah Menengah Atas Negeri 1 Majalengka",
-      en: "State Senior High School 1 Majalengka",
-    } satisfies LocalizedText,
-    campus: {
-      associate: {
-        id: "Politeknik Negeri Bandung",
-        en: "Bandung State Polytechnic",
-      } satisfies LocalizedText,
-    },
+    highSchool: [
+      {
+        schoolName: {
+          id: "Sekolah Menengah Atas Negeri 1 Majalengka",
+          en: "State Senior High School 1 Majalengka",
+        } satisfies LocalizedText,
+        schoolField: {
+          id: "Matematika dan Ilmu Pengetahuan Alam",
+          en: "Mathematics and Science",
+        } satisfies LocalizedText,
+      },
+    ],
+    campus: [
+      {
+        campusName: {
+          id: "Politeknik Negeri Bandung",
+          en: "Bandung State Polytechnic",
+        } satisfies LocalizedText,
+        campusField: {
+          id: "Diploma Teknik Komputer dan Informatika",
+          en: "Associate Computer and Informatics Engineering",
+        } satisfies LocalizedText,
+      },
+    ],
   },
-
-  educationField: {
-    id: "Teknik Komputer dan Informatika",
-    en: "Computer and Informatics Engineering",
-  } satisfies LocalizedText,
 
   status: {
     id: "Lulusan Baru",
@@ -42,7 +51,6 @@ export const profile = {
 
   role: [
     "Full Stack Developer",
-    // "Frontend Engineer",
     "Mobile Developer",
     "Software Engineer",
     "UI/UX Designer",

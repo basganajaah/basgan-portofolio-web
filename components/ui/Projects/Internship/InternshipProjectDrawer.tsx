@@ -15,7 +15,10 @@ import {
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import CircleIcon from "@mui/icons-material/Circle";
 import type { Project } from "@/types/project";
-import RoleChip from "@/components/atoms/RoleChip"
+import RoleChip from "@/components/atoms/RoleChip";
+import { useGalleryImageErrors } from "@/hooks/useImageError";
+import ProjectImageFallback from "@/components/atoms/ProjectImageFallback";
+import { itemVariants } from "@/lib/utils";
 
 interface InternshipProjectDrawerProps {
   project: Project;
@@ -31,6 +34,7 @@ export default function InternshipProjectDrawer({
   anchor,
 }: InternshipProjectDrawerProps) {
   const locale = useLocale();
+  const { isError, handleError } = useGalleryImageErrors();
 
   const localized = (value?: { id: string; en: string }) =>
     value ? (locale === "id" ? value.id : value.en) : "";
@@ -190,31 +194,40 @@ export default function InternshipProjectDrawer({
           {project.gallery && project.gallery.length > 0 && (
             <Box>
               <Stack spacing={2}>
-                {project.gallery.map((image, index) => (
-                  <Box
-                    key={`${project.id}-gallery-${index}`}
-                    sx={{
-                      position: "relative",
-                      width: "100%",
-                      aspectRatio: "16 / 10",
-                      borderRadius: 2,
-                      overflow: "hidden",
-                      bgcolor: "action.hover",
-                      transition: "0.25s ease-in-out",
-                      " &:hover": {
-                        scale: 1.025,
-                      },
-                    }}
-                  >
-                    <Image
-                      src={image}
-                      alt={`${localized(project.title)} - ${index + 1}`}
-                      fill
-                      sizes="(max-width: 680px) 100vw, 680px"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </Box>
-                ))}
+                {project.gallery.map((image, index) => {
+                  return (
+                    <Box
+                      key={`${project.id}-gallery-${index}`}
+                      sx={{
+                        position: "relative",
+                        width: "100%",
+                        aspectRatio: "16 / 10",
+                        borderRadius: 2,
+                        overflow: "hidden",
+                        bgcolor: "action.hover",
+                        transition: "0.25s ease-in-out",
+                        " &:hover": {
+                          scale: 1.025,
+                        },
+                      }}
+                    >
+                      {!isError(image) ? (
+                        <Image
+                          src={image}
+                          alt={`${localized(project.title)} - ${index + 1}`}
+                          fill
+                          sizes="(max-width: 680px) 100vw, 680px"
+                          style={{ objectFit: "cover" }}
+                          onError={() => handleError(image)}
+                        />
+                      ) : (
+                        <ProjectImageFallback
+                          title={localized(project.title)}
+                        />
+                      )}
+                    </Box>
+                  );
+                })}
               </Stack>
             </Box>
           )}
@@ -357,7 +370,15 @@ export default function InternshipProjectDrawer({
               }}
             >
               {project.technologies.map((technology) => (
-                <RoleChip key={technology} label={technology} />
+                <motion.div
+                  key={technology}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <RoleChip key={technology} label={technology} />
+                </motion.div>
               ))}
             </Box>
           </Box>

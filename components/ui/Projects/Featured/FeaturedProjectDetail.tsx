@@ -3,7 +3,8 @@ import CircleIcon from "@mui/icons-material/Circle";
 import { useLocale, useTranslations } from "next-intl";
 import type { Project } from "@/types/project";
 import RoleChip from "@/components/atoms/RoleChip";
-import { getLocalizedText, type Locale } from "@/lib/utils";
+import { getLocalizedText, type Locale, itemVariants } from "@/lib/utils";
+import { motion } from "motion/react";
 
 interface FeaturedProjectDetailProps {
   project: Project;
@@ -25,7 +26,6 @@ export default function FeaturedProjectDetail({
         }}
       />
 
-      {/* Description & Contributions */}
       <Box
         sx={{
           display: "grid",
@@ -33,7 +33,6 @@ export default function FeaturedProjectDetail({
           gap: { xs: 3, md: 5 },
         }}
       >
-        {/* Description */}
         <Stack direction={"column"} sx={{ gap: 1 }}>
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
@@ -50,7 +49,6 @@ export default function FeaturedProjectDetail({
               {getLocalizedText(project.description, locale)}
             </Typography>
 
-            {/* Problem Statement */}
             {project.notes && (
               <Typography
                 sx={{
@@ -67,7 +65,6 @@ export default function FeaturedProjectDetail({
           </Box>
         </Stack>
 
-        {/* Contributions */}
         {project.contributions && project.contributions.length > 0 && (
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
@@ -117,7 +114,6 @@ export default function FeaturedProjectDetail({
         }}
       />
 
-      {/* Roles & Technologies */}
       <Box
         sx={{
           display: "grid",
@@ -125,7 +121,6 @@ export default function FeaturedProjectDetail({
           gap: { xs: 2.5, md: 5 },
         }}
       >
-        {/* Roles */}
         {project.roles && project.roles.length > 0 && (
           <Box sx={{ minWidth: 0 }}>
             <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
@@ -138,17 +133,21 @@ export default function FeaturedProjectDetail({
               useFlexGap
               sx={{ flexWrap: "wrap" }}
             >
-              {project.roles.map((role, roleIndex) => (
-                <RoleChip
-                  key={`${project.id}-role-${roleIndex}`}
-                  label={role}
-                />
+              {project.roles.map((role) => (
+                <motion.div
+                  key={role}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <RoleChip key={role} label={role} />
+                </motion.div>
               ))}
             </Stack>
           </Box>
         )}
 
-        {/* Technologies */}
         <Box sx={{ minWidth: 0 }}>
           <Typography sx={{ mb: 1.5, fontWeight: 700 }}>
             {t("technologies")}
@@ -161,7 +160,15 @@ export default function FeaturedProjectDetail({
             sx={{ flexWrap: "wrap" }}
           >
             {project.technologies.map((technology) => (
-              <RoleChip key={technology} label={technology} />
+              <motion.div
+                key={technology}
+                variants={itemVariants}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ duration: 0.2 }}
+              >
+                <RoleChip key={technology} label={technology} />
+              </motion.div>
             ))}
           </Stack>
         </Box>
