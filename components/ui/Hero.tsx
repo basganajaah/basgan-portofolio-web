@@ -138,11 +138,24 @@ export default function Hero() {
                   onInit={(typewriter) => {
                     typewriter
                       .typeString("Bandyaga Adiansyah.")
-                      .pauseFor(1000)
+                      .pauseFor(2000)
                       .deleteChars(9)
-                      .pauseFor(300)
+                      .pauseFor(400)
                       .typeString(". Sugandi.")
                       .pauseFor(2000)
+                      .deleteChars(15)
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .typeString(`${profile.nickname.acronym}`)
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .typeString(`${profile.nickname.short}`)
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .typeString(`${profile.nickname.alias}`)
+                      .pauseFor(2000)
+                      .deleteAll()
+                      .pauseFor(500)
                       .start();
                   }}
                 />

@@ -21,6 +21,7 @@
     "next-intl": "^4.14.10",
     "react": "19.3.0",
     "react-dom": "19.3.0",
+    "slot-text": "^0.3.4",
     "typewriter-effect": "^3.3.0"
   },
   "devDependencies": {

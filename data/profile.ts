@@ -10,44 +10,31 @@ export const profile = {
     alias: "Saga",
   },
 
-  birthPlace: "Jakarta",
-
-  birthDay: {
-    id: "1 April 2004",
-    en: "April 1st, 2004",
+  birthPlace: {
+    id: "Jakarta, Indonesia — 1 April 2004",
+    en: "Jakarta, Indonesia — April 1st 2004",
   } satisfies LocalizedText,
 
-  education: {
-    highSchool: [
-      {
-        schoolName: {
-          id: "Sekolah Menengah Atas Negeri 1 Majalengka",
-          en: "State Senior High School 1 Majalengka",
-        } satisfies LocalizedText,
-        schoolField: {
-          id: "Matematika dan Ilmu Pengetahuan Alam",
-          en: "Mathematics and Science",
-        } satisfies LocalizedText,
-      },
-    ],
-    campus: [
-      {
-        campusName: {
-          id: "Politeknik Negeri Bandung",
-          en: "Bandung State Polytechnic",
-        } satisfies LocalizedText,
-        campusField: {
-          id: "Diploma Teknik Komputer dan Informatika",
-          en: "Associate Computer and Informatics Engineering",
-        } satisfies LocalizedText,
-      },
-    ],
-  },
-
-  status: {
-    id: "Lulusan Baru",
-    en: "Fresh Graduate",
+  basedIn: {
+    id: "Jakarta dan Bandung",
+    en: "Jakarta and Bandung ",
   } satisfies LocalizedText,
+
+  workMode: {
+    id: "Remote, Hybrid, dan On-site",
+    en: "Remote, Hybrid, and On-site",
+  } satisfies LocalizedText,
+
+  languages: [
+    {
+      id: "Bahasa Indonesia",
+      en: "Indonesian",
+    },
+    {
+      id: "Bahasa Inggris",
+      en: "English",
+    },
+  ] satisfies LocalizedText[],
 
   role: [
     "Full Stack Developer",

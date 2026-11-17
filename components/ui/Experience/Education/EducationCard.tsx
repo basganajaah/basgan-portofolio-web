@@ -40,13 +40,12 @@ export default function EducationCard({ education }: EducationCardProps) {
       <Box
         sx={{
           p: { xs: 2, sm: 2.5, md: 3 },
-          border: "2px solid",
-          borderColor: "divider",
+          border: "4px solid",
+          borderColor: "text.primary",
           borderRadius: 2,
           bgcolor: "background.paper",
           transition: "border-color 0.25s ease, transform 0.25s ease",
           "&:hover": {
-            borderColor: "text.secondary",
             transform: "translateY(-3px)",
           },
         }}

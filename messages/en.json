@@ -25,7 +25,7 @@
   },
 
   "Projects": {
-    "projects": "Projects",
+    "projects": "PROJECTS",
     "title": "My Projects",
     "subtitle": "A selection of projects I have developed over the past few years. Please note that interfaces for internal or NDA-protected projects are displayed as illustrations.",
     "featured": "Featured Projects",
@@ -48,7 +48,7 @@
   },
 
   "Experience": {
-    "experience": "Experience",
+    "experience": "EXPERIENCE",
     "title": "My Experience",
     "subtitle": "My professional and academic journey developing software solutions and contributing across diverse teams.",
     "work": "Work Experience",
@@ -57,5 +57,22 @@
     "technologies": "Technologies",
     "achievements": "Achievements",
     "index": "GPA"
+  },
+
+  "About": {
+  "about": "ABOUT",
+  "title": "About Me",
+  "subtitle": "A little about who I am, what I do, and the things I enjoy beyond coding.",
+  "profile": "Profile",
+  "interest": "Interest",
+  "carouselLabel": "Personal interests and activities",
+  "notProvided": "Not specified",
+  "profileFields": {
+    "fullName": "Full Name",
+    "birthplace": "Birthplace",
+    "location": "Based in",
+    "workMode": "Work Mode",
+    "languages": "Languages"
   }
+}
 }

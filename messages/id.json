@@ -25,7 +25,7 @@
   },
 
   "Projects": {
-    "projects": "Proyek",
+    "projects": "PROYEK",
     "title": "Proyek Saya",
     "subtitle": "Pilihan proyek yang saya kembangkan selama beberapa tahun terakhir. Sebagai catatan, antarmuka untuk proyek internal maupun yang terikat NDA ditampilkan dalam bentuk ilustrasi.",
     "featured": "Proyek Unggulan",
@@ -48,7 +48,7 @@
   },
 
   "Experience": {
-    "experience": "Pengalaman",
+    "experience": "PENGALAMAN",
     "title": "Pengalaman Saya",
     "subtitle": "Perjalanan profesional dan akademis saya dalam mengembangkan solusi perangkat lunak serta kontribusi dalam berbagai tim.",
     "work": "Pengalaman Kerja",
@@ -57,5 +57,22 @@
     "technologies": "Teknologi",
     "achievements": "Prestasi",
     "index": "IPK"
+  },
+
+  "About": {
+    "about": "TENTANG",
+    "title": "Tentang Saya",
+    "subtitle": "Mengenal lebih jauh tentang diri saya, aktivitas, dan hal-hal yang saya sukai di luar dunia programming.",
+    "profile": "Profile",
+    "interest": "Interest",
+    "carouselLabel": "Minat dan aktivitas pribadi",
+    "notProvided": "Belum ditentukan",
+    "profileFields": {
+      "fullName": "Nama Lengkap",
+      "birthplace": "Tempat Lahir",
+      "location": "Domisili",
+      "workMode": "Mode Kerja",
+      "languages": "Bahasa"
+    }
   }
 }
