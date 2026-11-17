@@ -45,5 +45,17 @@
     "next-project": "Proyek berikutnya",
     "about-project": "Tentang Proyek",
     "roles": "Peran"
+  },
+
+  "Experience": {
+    "experience": "Pengalaman",
+    "title": "Pengalaman Saya",
+    "subtitle": "Perjalanan profesional dan akademis saya dalam mengembangkan solusi perangkat lunak serta kontribusi dalam berbagai tim.",
+    "work": "Pengalaman Kerja",
+    "education": "Pendidikan",
+    "key-contributions": "Kontribusi Utama",
+    "technologies": "Teknologi",
+    "achievements": "Prestasi",
+    "index": "IPK"
   }
 }

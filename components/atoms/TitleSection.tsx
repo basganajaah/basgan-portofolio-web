@@ -5,15 +5,17 @@ import { numSection } from "@/lib/utils";
 interface TitleSectionProps extends StackProps {
   category: string;
   reverse?: boolean;
+  namespace?: string;
 }
 
 export default function TitleSection({
   category,
   reverse = false,
+  namespace = "Projects",
   sx,
   ...props
 }: TitleSectionProps) {
-  const t = useTranslations("Projects");
+  const t = useTranslations(namespace);
 
   const titleNode = (
     <Typography

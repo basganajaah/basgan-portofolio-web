@@ -45,5 +45,17 @@
     "next-project": "Next project",
     "about-project": "About the Project",
     "roles": "Roles"
+  },
+
+  "Experience": {
+    "experience": "Experience",
+    "title": "My Experience",
+    "subtitle": "My professional and academic journey developing software solutions and contributing across diverse teams.",
+    "work": "Work Experience",
+    "education": "Education",
+    "key-contributions": "Key Contributions",
+    "technologies": "Technologies",
+    "achievements": "Achievements",
+    "index": "GPA"
   }
 }

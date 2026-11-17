@@ -30,7 +30,8 @@ export default function Hero() {
         minHeight: "100svh",
         display: "flex",
         alignItems: "center",
-        py: { xs: 14, md: 12 },
+        pt: { xs: 14, md: 12 },
+        pb: { xs: 4, md: 6 },
         overflow: "hidden",
       }}
     >

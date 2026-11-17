@@ -125,9 +125,8 @@ export default function InternshipProjectItem({
                   }}
                 >
                   <Typography
-                    variant="caption"
                     sx={{
-                      fontSize: { xs: 12, md: 16 },
+                      fontSize: { xs: 12, md: 14 },
                       alignItems: "center",
                       letterSpacing: 1,
                       color: "text.secondary",
@@ -136,11 +135,18 @@ export default function InternshipProjectItem({
                     {getLocalizedText(project.organization, locale)}
                   </Typography>
 
-                  <Typography sx={{ color: "text.secondary" }}>•</Typography>
+                  <Typography
+                    sx={{
+                      color: "text.secondary",
+                      fontSize: { xs: 12, md: 14 },
+                    }}
+                  >
+                    •
+                  </Typography>
 
                   <Typography
                     sx={{
-                      fontSize: { xs: 12, md: 16 },
+                      fontSize: { xs: 12, md: 14 },
                       alignItems: "center",
                       letterSpacing: 1,
                       color: "text.secondary",
@@ -149,6 +155,26 @@ export default function InternshipProjectItem({
                     {project.period}
                   </Typography>
                 </Stack>
+              </Stack>
+
+              {/* Role */}
+              <Stack
+                direction="row"
+                spacing={1}
+                useFlexGap
+                sx={{ flexWrap: "wrap" }}
+              >
+                {project.roles?.map((role) => (
+                  <motion.div
+                    key={role}
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <RoleChip key={role} label={role} sx={{ mb: 1.25 }} />
+                  </motion.div>
+                ))}
               </Stack>
 
               <Typography
@@ -160,13 +186,6 @@ export default function InternshipProjectItem({
                 {getLocalizedText(project.description, locale)}
               </Typography>
             </Box>
-
-            {/* Role */}
-            <Typography
-              sx={{ color: "text.secondary", fontSize: { xs: 14, md: 16 } }}
-            >
-              {project.roles?.join(", ")}
-            </Typography>
 
             {/* Unique Facts */}
             {project.uniqueFacts && project.uniqueFacts.length > 0 && (
@@ -193,22 +212,21 @@ export default function InternshipProjectItem({
                   >
                     <Typography
                       sx={{
-                        fontSize: { xs: 16, md: 20 },
+                        fontSize: { xs: 12, md: 20 },
                         fontWeight: 700,
-                        lineHeight: 1.3,
+                        lineHeight: 1.2,
                       }}
                     >
                       {getLocalizedText(fact.value, locale)}
                     </Typography>
 
                     <Typography
-                      variant="caption"
-                      color="text.secondary"
                       sx={{
                         display: "block",
                         mt: 1,
-                        lineHeight: 1.4,
+                        lineHeight: 1.2,
                         color: "text.secondary",
+                        fontSize: { xs: 10, md: 12 },
                       }}
                     >
                       {getLocalizedText(fact.label, locale)}
@@ -217,7 +235,6 @@ export default function InternshipProjectItem({
                 ))}
               </Box>
             )}
-
             {/* Short Contributions */}
             {project.shortContributions &&
               project.shortContributions.length > 0 && (
@@ -260,7 +277,6 @@ export default function InternshipProjectItem({
                   ))}
                 </Box>
               )}
-
             {/* Technologies */}
             <Box
               sx={{
@@ -281,7 +297,6 @@ export default function InternshipProjectItem({
                 </motion.div>
               ))}
             </Box>
-
             {/* Detail Button */}
             <Box>
               <Button

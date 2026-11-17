@@ -29,6 +29,12 @@ export function numSection(category: string) {
     case "other":
       num = "04";
       break;
+    case "work":
+      num = "01";
+      break;
+    case "education":
+      num = "02";
+      break;
     default:
       num = "01";
   }

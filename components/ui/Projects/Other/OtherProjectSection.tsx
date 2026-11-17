@@ -171,7 +171,7 @@ export default function OtherProjectSection({
                         sx={{
                           color: "text.primary",
                           fontWeight: 500,
-                          fontSize: 14,
+                          fontSize: { xs: 12, md: 14 },
                         }}
                       >
                         {project.period}
@@ -183,7 +183,10 @@ export default function OtherProjectSection({
                     <>
                       <Typography
                         component="span"
-                        sx={{ color: "primary.main", fontSize: 14 }}
+                        sx={{
+                          color: "primary.main",
+                          fontSize: { xs: 12, md: 14 },
+                        }}
                       >
                         •
                       </Typography>
@@ -192,7 +195,7 @@ export default function OtherProjectSection({
                         sx={{
                           color: "text.primary",
                           fontWeight: 500,
-                          fontSize: 14,
+                          fontSize: { xs: 12, md: 14 },
                         }}
                       >
                         {getLocalizedText(project.context, locale)}

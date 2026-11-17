@@ -18,7 +18,7 @@ import type { Project } from "@/types/project";
 import RoleChip from "@/components/atoms/RoleChip";
 import { useGalleryImageErrors } from "@/hooks/useImageError";
 import ProjectImageFallback from "@/components/atoms/ProjectImageFallback";
-import { itemVariants } from "@/lib/utils";
+import { getLocalizedText, type Locale, itemVariants } from "@/lib/utils";
 
 interface InternshipProjectDrawerProps {
   project: Project;
@@ -33,15 +33,15 @@ export default function InternshipProjectDrawer({
   onClose,
   anchor,
 }: InternshipProjectDrawerProps) {
-  const locale = useLocale();
+  const locale = useLocale() as Locale;
   const { isError, handleError } = useGalleryImageErrors();
-
-  const localized = (value?: { id: string; en: string }) =>
-    value ? (locale === "id" ? value.id : value.en) : "";
 
   const t = useTranslations("Projects");
 
-  const footnote = [localized(project.context), localized(project.notes)]
+  const footnote = [
+    getLocalizedText(project.context, locale),
+    getLocalizedText(project.notes, locale),
+  ]
     .filter(Boolean)
     .join("\n\n");
 
@@ -150,11 +150,12 @@ export default function InternshipProjectDrawer({
               variant="h4"
               sx={{
                 fontWeight: 700,
+                fontSize: { xs: 22, md: 26 },
                 lineHeight: 1.25,
-                mb: 2,
+                mb: 1.25,
               }}
             >
-              {localized(project.title)}
+              {getLocalizedText(project.title, locale)}
             </Typography>
 
             <Stack
@@ -165,28 +166,43 @@ export default function InternshipProjectDrawer({
                 flexWrap: "wrap",
               }}
             >
-              {project.roles?.map((role, index) => (
-                <Typography
-                  key={`${project.id}-role-${index}`}
-                  sx={{ color: "text.secondary" }}
-                >
-                  {index > 0 ? `, ${role}` : role}
-                </Typography>
-              ))}
+              <Typography
+                sx={{ color: "text.secondary", fontSize: { xs: 12, md: 14 } }}
+              >
+                {getLocalizedText(project.organization, locale)}
+              </Typography>
 
-              {project.roles && project.roles.length > 0 && (
-                <Typography sx={{ color: "text.secondary" }}>•</Typography>
-              )}
+              <Typography
+                sx={{ color: "text.secondary", fontSize: { xs: 12, md: 14 } }}
+              >
+                •
+              </Typography>
 
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{ color: "text.secondary", fontSize: { xs: 12, md: 14 } }}
+              >
                 {project.period}
               </Typography>
+            </Stack>
 
-              <Typography sx={{ color: "text.secondary" }}>•</Typography>
-
-              <Typography sx={{ color: "text.secondary" }}>
-                {localized(project.context)}
-              </Typography>
+            {/* Role */}
+            <Stack
+              direction="row"
+              spacing={1}
+              useFlexGap
+              sx={{ flexWrap: "wrap" }}
+            >
+              {project.roles?.map((role) => (
+                <motion.div
+                  key={role}
+                  variants={itemVariants}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <RoleChip key={role} label={role} sx={{ mt: 1.25 }} />
+                </motion.div>
+              ))}
             </Stack>
           </Box>
 
@@ -203,6 +219,7 @@ export default function InternshipProjectDrawer({
                         width: "100%",
                         aspectRatio: "16 / 10",
                         borderRadius: 2,
+                        border: "4px solid",
                         overflow: "hidden",
                         bgcolor: "action.hover",
                         transition: "0.25s ease-in-out",
@@ -214,7 +231,7 @@ export default function InternshipProjectDrawer({
                       {!isError(image) ? (
                         <Image
                           src={image}
-                          alt={`${localized(project.title)} - ${index + 1}`}
+                          alt={`${getLocalizedText(project.title, locale)} - ${index + 1}`}
                           fill
                           sizes="(max-width: 680px) 100vw, 680px"
                           style={{ objectFit: "cover" }}
@@ -222,7 +239,7 @@ export default function InternshipProjectDrawer({
                         />
                       ) : (
                         <ProjectImageFallback
-                          title={localized(project.title)}
+                          title={getLocalizedText(project.title, locale)}
                         />
                       )}
                     </Box>
@@ -240,7 +257,7 @@ export default function InternshipProjectDrawer({
               color: "text.secondary",
             }}
           >
-            {localized(project.description)}
+            {getLocalizedText(project.description, locale)}
           </Typography>
 
           {/* Unique Facts */}
@@ -273,25 +290,24 @@ export default function InternshipProjectDrawer({
                 >
                   <Typography
                     sx={{
-                      fontSize: { xs: 17, sm: 22 },
+                      fontSize: { xs: 12, md: 20 },
                       fontWeight: 700,
                       lineHeight: 1.2,
                     }}
                   >
-                    {localized(fact.value)}
+                    {getLocalizedText(fact.value, locale)}
                   </Typography>
 
                   <Typography
-                    variant="caption"
                     sx={{
                       display: "block",
-                      mt: 0.75,
+                      mt: 1,
+                      lineHeight: 1.2,
                       color: "text.secondary",
-                      lineHeight: 1.3,
-                      wordBreak: "break-word",
+                      fontSize: { xs: 10, md: 12 },
                     }}
                   >
-                    {localized(fact.label)}
+                    {getLocalizedText(fact.label, locale)}
                   </Typography>
                 </Box>
               ))}
@@ -340,7 +356,7 @@ export default function InternshipProjectDrawer({
                         color: "text.secondary",
                       }}
                     >
-                      {localized(contribution)}
+                      {getLocalizedText(contribution, locale)}
                     </Typography>
                   </Box>
                 ))}
