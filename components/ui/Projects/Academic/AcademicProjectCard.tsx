@@ -33,7 +33,7 @@ export default function AcademicProjectCard({
         height: "100%",
         p: { xs: 1.75, sm: 2, md: 2.5 },
         overflow: "hidden",
-        border: "4px solid",
+        border: "2px solid",
         borderColor: "primary.main",
         borderRadius: 2.5,
         bgcolor: "background.paper",

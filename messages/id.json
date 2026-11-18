@@ -105,5 +105,30 @@
         "description": "Memiliki pemahaman dasar mengenai konsep dan penggunaan teknologi serta sedang membangun pengalaman melalui pembelajaran dan praktik."
       }
     }
+  },
+
+  "Certificate": {
+    "certificate": "SERTIFIKAT",
+    "title": "Sertifikat Saya",
+    "subtitle": "Kumpulan sertifikat dan pencapaian yang saya peroleh melalui berbagai program pembelajaran, pelatihan, dan kegiatan profesional sebagai bagian dari perjalanan pengembangan kemampuan dan pengetahuan saya.",
+    "issued": "Diterbitkan",
+    "details": "Detail Sertifikat",
+    "close": "Tutup",
+    "issueDate": "Tanggal Terbit",
+    "expirationDate": "Tanggal Kedaluwarsa",
+    "score": "Nilai",
+    "viewCredential": "Lihat Credential",
+    "loadMore": "Lihat Lebih Banyak"
+  },
+
+  "Contact": {
+    "contact": "KONTAK",
+    "title": "Punya ide menarik? Mari kita wujudkan bersama!",
+    "description": "Saya selalu terbuka untuk peluang baru, kolaborasi, maupun diskusi seputar teknologi dan pengembangan perangkat lunak. Jangan ragu untuk menghubungi saya!",
+    "emailCta": "Hubungi Saya",
+    "copyEmail": "Salin Email",
+    "copied": "Email Tersalin",
+    "downloadCV": "Unduh CV",
+    "socialTitle": "Temukan saya di"
   }
 }

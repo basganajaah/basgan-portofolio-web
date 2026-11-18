@@ -17,7 +17,7 @@ export const profile = {
 
   basedIn: {
     id: "Jakarta dan Bandung",
-    en: "Jakarta and Bandung ",
+    en: "Jakarta and Bandung",
   } satisfies LocalizedText,
 
   workMode: {
@@ -49,12 +49,13 @@ export const profile = {
   socialLinks: {
     github: "https://github.com/basganajaah",
     linkedin: "https://linkedin.com/in/bandyagaadiansyah/",
-    whatsapp: "https://wa.me/628950710037",
+    whatsapp: "https://wa.me/6289507130037",
     telegram: "https://t.me/gaaaruuureeen",
     email:
       "https://mail.google.com/mail/?view=cm&fs=1&to=bandyagaadiansyah@gmail.com",
   },
 
   email: "bandyagaadiansyah@gmail.com",
+  emailMailto: "mailto:bandyagaadiansyah@gmail.com",
   phone: "+6289507130037",
 };

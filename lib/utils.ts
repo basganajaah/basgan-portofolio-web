@@ -29,7 +29,7 @@ export function numTitle(section: string) {
     case "skills":
       secNum = "04";
       break;
-    case "certificates":
+    case "certificate":
       secNum = "05";
       break;
     case "contact":

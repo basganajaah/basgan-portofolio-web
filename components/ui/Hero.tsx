@@ -285,7 +285,10 @@ export default function Hero() {
                   gap: 2,
                 }}
               >
-                <Typography variant="caption" sx={{ color: "text.secondary" }}>
+                <Typography
+                  variant="caption"
+                  sx={{ fontWeight: 600, fontSize: "0.8rem" }}
+                >
                   {t("find")}
                 </Typography>
 

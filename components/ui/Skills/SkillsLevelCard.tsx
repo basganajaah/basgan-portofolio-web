@@ -8,7 +8,7 @@ import {
   Card,
   Typography,
 } from "@mui/material";
-import { alpha, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import type { SyntheticEvent } from "react";
@@ -16,7 +16,8 @@ import { AnimatePresence, motion } from "motion/react";
 import {
   FiAward,
   FiBookOpen,
-  FiChevronDown,
+  FiMinus,
+  FiPlus,
   FiTrendingUp,
 } from "react-icons/fi";
 import type { IconType } from "react-icons";
@@ -55,7 +56,7 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
 
   const handleChange =
     (levelId: string) => (_event: SyntheticEvent, isExpanded: boolean) => {
-      // Pastikan minimal 1 accordion selalu aktif (tidak bisa ditutup semua)
+      // Keep at least one accordion expanded.
       if (isExpanded) {
         setExpanded(levelId);
       }
@@ -63,21 +64,18 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
 
   return (
     <Card
-      variant="outlined"
       sx={{
         width: "100%",
         overflow: "hidden",
-        borderRadius: 3,
-        border: "4px solid",
-        borderColor: "text.primary",
-        bgcolor: "background.paper",
-        boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
+        border: 0,
+        borderRadius: 0,
+        bgcolor: "transparent",
+        boxShadow: "none",
       }}
     >
       {levels.map((level) => {
         const config = levelConfig[level.id];
         const accent = theme.palette[config.color].main;
-        const primaryText = theme.palette.text.primary;
         const LevelIcon = config.Icon;
         const isExpanded = expanded === level.id;
 
@@ -106,56 +104,34 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
                 display: "none",
               },
 
-              // Gradient highlight for the active level.
-              "&::after": {
-                content: '""',
-                position: "absolute",
-                top: 0,
-                left: 0,
-                right: 0,
-                height: "3px",
-                background: `linear-gradient(
-                  90deg,
-                  ${alpha(accent, 0)} 0%,
-                  ${alpha(accent, 0.45)} 15%,
-                  ${accent} 40%,
-                  ${primaryText} 70%,
-                  ${alpha(primaryText, 0.15)} 100%
-                )`,
-                opacity: isExpanded ? 1 : 0,
-                transition: "opacity 0.3s ease",
-                pointerEvents: "none",
-                zIndex: 2,
-              },
-
-              // Soft glow without creating another border.
-              ...(isExpanded && {
-                background: `linear-gradient(
-                  180deg,
-                  ${alpha(accent, theme.palette.mode === "dark" ? 0.09 : 0.045)} 0%,
-                  transparent 35%
-                )`,
-              }),
-
-              transition: "background 0.3s ease",
-
-              // Only one separator between accordion items.
               "&:not(:last-child)": {
-                borderBottom: "1px solid",
-                borderColor: "divider",
+                borderBottom: "2px solid",
+                borderColor: "text.primary",
               },
             }}
           >
             <AccordionSummary
               expandIcon={
-                <FiChevronDown size={20} color={theme.palette.text.secondary} />
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: isExpanded ? accent : "text.primary",
+                    transition: "color 0.2s ease",
+                  }}
+                >
+                  {isExpanded ? <FiMinus size={19} /> : <FiPlus size={19} />}
+                </Box>
               }
               sx={{
                 minHeight: 68,
-                px: { xs: 2, md: 2.5 },
+                px: 0,
+                py: 0,
 
                 "& .MuiAccordionSummary-content": {
                   my: 1.5,
+                  mx: 0,
                 },
 
                 "&.Mui-expanded": {
@@ -165,65 +141,36 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
                 "& .MuiAccordionSummary-content.Mui-expanded": {
                   my: 1.5,
                 },
+
+                "& .MuiAccordionSummary-expandIconWrapper": {
+                  transform: "none",
+                  ml: 1,
+                },
               }}
             >
               <Box sx={{ minWidth: 0, pr: 1 }}>
-                <Box
+                <Typography
+                  component="div"
                   sx={{
-                    display: "flex",
-                    flexWrap: "wrap",
-                    alignItems: "center",
-                    gap: 0.5,
+                    fontWeight: 700,
+                    fontSize: { xs: "0.85rem", md: "0.95rem" },
+                    lineHeight: 1.7,
+                    color: "text.primary",
                   }}
                 >
-                  {before && (
-                    <Typography
-                      component="span"
-                      sx={{
-                        fontWeight: 700,
-                        fontSize: { xs: "0.85rem", md: "0.95rem" },
-                        lineHeight: 1.7,
-                        color: "text.primary",
-                      }}
-                    >
-                      {before}
-                    </Typography>
-                  )}
-
+                  {before}
                   <Box
                     component="span"
                     sx={{
-                      display: "inline-block",
-                      px: 0.8,
-                      py: 0.15,
-                      borderRadius: 1,
+                      display: "inline",
                       color: accent,
-                      bgcolor: alpha(
-                        accent,
-                        theme.palette.mode === "dark" ? 0.2 : 0.12,
-                      ),
                       fontWeight: 800,
-                      fontSize: { xs: "0.85rem", md: "0.95rem" },
-                      lineHeight: 1.6,
                     }}
                   >
                     {highlight}
                   </Box>
-
-                  {after && (
-                    <Typography
-                      component="span"
-                      sx={{
-                        fontWeight: 700,
-                        fontSize: { xs: "0.85rem", md: "0.95rem" },
-                        lineHeight: 1.7,
-                        color: "text.primary",
-                      }}
-                    >
-                      {after}
-                    </Typography>
-                  )}
-                </Box>
+                  {after}
+                </Typography>
 
                 <Typography
                   component="p"
@@ -243,10 +190,8 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
             <AccordionDetails
               sx={{
                 position: "relative",
-                px: { xs: 2, md: 2.5 },
-                pt: 0.5,
-                pb: 3,
                 overflow: "hidden",
+                p: 0,
               }}
             >
               <AnimatePresence initial={false}>
@@ -267,8 +212,8 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
                         display: "flex",
                         flexDirection: "column",
                         gap: 3,
-                        pr: { xs: 0, sm: 1 },
-                        pb: 1,
+                        p: 0,
+                        pb: 2,
                       }}
                     >
                       {level.categories.map((category) => (
@@ -286,11 +231,26 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
               {/* Decorative level icon */}
               <Box
                 component={motion.div}
-                initial={{ opacity: 0, scale: 0.6, rotate: -15, y: 20 }}
+                initial={{
+                  opacity: 0,
+                  scale: 0.6,
+                  rotate: -15,
+                  y: 20,
+                }}
                 animate={
                   isExpanded
-                    ? { opacity: 0.15, scale: 1, rotate: 0, y: 0 }
-                    : { opacity: 0, scale: 0.6, rotate: -15, y: 20 }
+                    ? {
+                        opacity: 0.28,
+                        scale: 1,
+                        rotate: 0,
+                        y: 0,
+                      }
+                    : {
+                        opacity: 0,
+                        scale: 0.6,
+                        rotate: -15,
+                        y: 20,
+                      }
                 }
                 transition={{
                   duration: 0.45,
@@ -302,6 +262,7 @@ export default function SkillsLevelCard({ levels }: SkillsLevelCardProps) {
                   right: { xs: 12, md: 20 },
                   bottom: 10,
                   color: accent,
+                  opacity: 0.5,
                   pointerEvents: "none",
                   zIndex: 0,
                 }}

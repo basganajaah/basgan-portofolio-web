@@ -46,16 +46,15 @@ export default function AboutProfile({ isVisible }: AboutProfileProps) {
         overflow: "hidden",
         boxSizing: "border-box",
         width: "100%",
-        height: { xs: "auto", lg: 360 },
+        height: 360,
         minHeight: 360,
         display: "flex",
         flexDirection: "column",
         p: { xs: 3, lg: 3 },
-        border: "4px solid",
-        borderColor: "text.primary",
-        borderRadius: 3,
+        borderRadius: 4,
         bgcolor: "background.paper",
-        boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
+        boxShadow: "0 8px 20px rgba(0,0,0,0.06)",
+
         "&::after": {
           content: '""',
           position: "absolute",
@@ -67,7 +66,7 @@ export default function AboutProfile({ isVisible }: AboutProfileProps) {
           pointerEvents: "none",
           transform: "skewX(-20deg)",
           background:
-            "linear-gradient(110deg, transparent, rgba(255,255,255,0.18), transparent)",
+            "linear-gradient(110deg, transparent, rgba(255,255,255,0.5), transparent)",
           transition: "left 0.75s ease",
         },
         "&:hover::after": {

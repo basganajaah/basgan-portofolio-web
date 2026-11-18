@@ -123,11 +123,19 @@ export default function About() {
                 alignItems: "stretch",
               }}
             >
-              <motion.div variants={itemVariants} whileHover={cardHover}>
+              <motion.div
+                variants={itemVariants}
+                whileHover={cardHover}
+                style={{ height: "100%" }}
+              >
                 <AboutProfile isVisible={isVisible} />
               </motion.div>
 
-              <motion.div variants={itemVariants} whileHover={cardHover}>
+              <motion.div
+                variants={itemVariants}
+                whileHover={cardHover}
+                style={{ height: "100%" }}
+              >
                 <AboutCarousel
                   activeIndex={activeIndex}
                   onChange={setActiveIndex}
@@ -135,7 +143,11 @@ export default function About() {
                 />
               </motion.div>
 
-              <motion.div variants={itemVariants} whileHover={cardHover}>
+              <motion.div
+                variants={itemVariants}
+                whileHover={cardHover}
+                style={{ height: "100%" }}
+              >
                 <AboutInterest
                   activeIndex={activeIndex}
                   isVisible={isVisible}

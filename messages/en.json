@@ -105,5 +105,30 @@
         "description": "Has foundational knowledge of these technologies and is continuing to build experience through learning and practice."
       }
     }
+  },
+
+  "Certificate": {
+    "certificate": "CERTIFICATES",
+    "title": "My Certificates",
+    "subtitle": "A collection of certificates and achievements earned through various learning programs, training sessions, and professional activities as part of my journey in developing technical skills and knowledge.",
+    "issued": "Issued",
+    "details": "Certificate Details",
+    "close": "Close",
+    "issueDate": "Issue Date",
+    "expirationDate": "Expiration Date",
+    "score": "Score",
+    "viewCredential": "View Credential",
+    "loadMore": "Load More"
+  },
+
+  "Contact": {
+    "contact": "CONTACT",
+    "title": "Have an interesting idea? Let's build it together!",
+    "description": "I'm always open to new opportunities, collaborations, and conversations about technology and software development. Feel free to reach out!",
+    "emailCta": "Get in Touch",
+    "copyEmail": "Copy Email",
+    "copied": "Email Copied",
+    "downloadCV": "Download CV",
+    "socialTitle": "Find me on"
   }
 }

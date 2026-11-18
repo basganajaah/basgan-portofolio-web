@@ -98,22 +98,20 @@ export default function AboutCarousel({
         overflow: "hidden",
         boxSizing: "border-box",
         width: "100%",
-        height: { xs: "auto", lg: 360 },
-        minHeight: { xs: "auto", lg: 360 },
-        p: 0, // HAPUS PADDING
-        border: "4px solid",
-        borderColor: "text.primary",
-        borderRadius: 3,
+        height: 360,
+        minHeight: 360,
+        borderRadius: 4,
         bgcolor: "background.paper",
-        boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
+        boxShadow: "0 18px 20px rgba(0,0,0,0.06)",
         transition: "box-shadow 0.3s ease",
+
         "&::after": {
           content: '""',
           position: "absolute",
           top: 0,
           left: "-130%",
           zIndex: 2,
-          width: "65%",
+          width: "100%",
           height: "100%",
           pointerEvents: "none",
           transform: "skewX(-20deg)",
@@ -121,9 +119,11 @@ export default function AboutCarousel({
             "linear-gradient(110deg, transparent, rgba(255,255,255,0.18), transparent)",
           transition: "left 0.75s ease",
         },
+
         "&:hover::after": {
           left: "160%",
         },
+
         "&:hover": {
           boxShadow: "0 10px 26px rgba(0,0,0,0.12)",
         },
@@ -140,13 +140,13 @@ export default function AboutCarousel({
         sx={{
           position: "relative",
           width: "100%",
-          height: { xs: "auto", lg: 352 },
-          aspectRatio: { xs: "4 / 3", lg: "auto" },
+          height: "100%",
           overflow: "hidden",
           borderRadius: 0,
           outline: "none",
           cursor: "grab",
           touchAction: "pan-y",
+
           "&:focus-visible": {
             outline: "2px solid",
             outlineColor: "primary.main",
