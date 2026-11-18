@@ -130,5 +130,11 @@
     "copied": "Email Tersalin",
     "downloadCV": "Unduh CV",
     "socialTitle": "Temukan saya di"
+  },
+
+  "Footer": {
+    "copyright": "© 2026 Bandyaga A. Sugandi",
+    "builtWith": "Dirancang dan dibangun dengan Next.js, MUI, dan Framer Motion.",
+    "backToTop": "Kembali ke Atas"
   }
 }

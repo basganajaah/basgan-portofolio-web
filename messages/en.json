@@ -130,5 +130,11 @@
     "copied": "Email Copied",
     "downloadCV": "Download CV",
     "socialTitle": "Find me on"
+  },
+
+  "Footer": {
+    "copyright": "© 2026 Bandyaga A. Sugandi",
+    "builtWith": "Designed and built with Next.js, MUI and Framer Motion.",
+    "backToTop": "Back to Top"
   }
 }

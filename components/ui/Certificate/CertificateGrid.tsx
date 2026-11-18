@@ -79,6 +79,7 @@ export default function CertificateGrid() {
               borderRadius: 2,
               fontWeight: 700,
               textTransform: "none",
+              border: "2px solid"
             }}
           >
             {t("loadMore")}

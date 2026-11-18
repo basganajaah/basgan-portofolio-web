@@ -79,7 +79,6 @@ export default function AboutInterest({
 
         // Background icon hover effect
         "&:hover .interest-background-icon": {
-          opacity: 0.25,
           transform: "rotate(-8deg) scale(1.03)",
         },
       }}
