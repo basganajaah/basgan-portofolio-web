@@ -255,15 +255,15 @@ export default function Hero() {
                   sx={{
                     color: "text.primary",
                     border: "2px solid",
-                    borderColor: "#e5e5e5",
+                    borderColor: "text.primary",
                     borderRadius: "12px",
                     px: 2,
                     py: 1,
                     textTransform: "none",
                     fontWeight: 600,
                     "&:hover": {
-                      borderColor: "#171717",
-                      bgcolor: "#eef2ff",
+                      color: "#eef2ff",
+                      bgcolor: "text.primary",
                     },
                   }}
                 >
@@ -369,6 +369,7 @@ export default function Hero() {
               </Box>
             </motion.div>
           </Grid>
+
           {/* Right Image */}
           <Grid
             size={{ xs: 12, md: 5 }}
