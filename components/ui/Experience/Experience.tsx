@@ -7,6 +7,7 @@ import Typewriter from "typewriter-effect";
 import { useState } from "react";
 import WorkExperience from "./Work/WorkExperience";
 import Education from "./Education/Education";
+import { numTitle } from "@/lib/utils";
 
 export default function Experience() {
   const t = useTranslations("Experience");
@@ -47,7 +48,7 @@ export default function Experience() {
                 letterSpacing: "0.16em",
               }}
             >
-              02 / {t("experience")}
+              {numTitle("experience")} / {t("experience")}
             </Typography>
 
             <Typography
@@ -59,6 +60,7 @@ export default function Experience() {
                 letterSpacing: "-0.055em",
                 fontSize: { xs: "2.5rem", md: "4rem" },
                 lineHeight: 1.1,
+                minHeight: { xs: "1.1em", md: "1.1em" },
               }}
             >
               {isVisible && (
@@ -81,6 +83,7 @@ export default function Experience() {
                 fontSize: { xs: "0.95rem", md: "1.1rem" },
                 lineHeight: 1.8,
                 color: "text.secondary",
+                minHeight: "3.6em",
               }}
             >
               {isVisible && (

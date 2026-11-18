@@ -62,7 +62,7 @@ export default function ProfileBadge({
           px: { xs: 1.2, sm: 1.8 },
           py: { xs: 0.8, sm: 1 },
           borderRadius: { xs: "12px", sm: "16px" },
-          bgcolor: "rgba(255, 255, 255, 0.85)",
+          bgcolor: "#eef2ff",
           backdropFilter: "blur(12px)",
           border: "4px solid #000000",
           boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.08)",
@@ -80,7 +80,7 @@ export default function ProfileBadge({
               height: { xs: 26, sm: 34 },
               borderRadius: { xs: "8px", sm: "10px" },
               bgcolor: "#171717",
-              color: "#ffffff",
+              color: "#eef2ff",
               flexShrink: 0,
               "& .MuiSvgIcon-root": {
                 fontSize: { xs: 14, sm: 18 },

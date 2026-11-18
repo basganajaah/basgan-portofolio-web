@@ -312,7 +312,7 @@ export default function InternshipProjectItem({
                   "&:hover": {
                     bgcolor: "#171717",
                     borderColor: "text.primary",
-                    color: "#ffffff",
+                    color: "#eef2ff",
                   },
                 }}
               >

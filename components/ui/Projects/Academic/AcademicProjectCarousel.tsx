@@ -110,7 +110,7 @@ export default function AcademicProjectCarousel({
               border: "2px solid",
               "&:hover": {
                 bgcolor: "text.primary",
-                color: "#ffffff",
+                color: "#eef2ff",
                 borderColor: "text.primary",
               },
             }}
@@ -138,7 +138,7 @@ export default function AcademicProjectCarousel({
               border: "2px solid",
               "&:hover": {
                 bgcolor: "text.primary",
-                color: "#ffffff",
+                color: "#eef2ff",
                 borderColor: "text.primary",
               },
             }}

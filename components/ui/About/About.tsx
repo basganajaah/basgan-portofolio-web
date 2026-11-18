@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import Typewriter from "typewriter-effect";
 import { useState } from "react";
 
-import { itemVariants, sectionVariants } from "@/lib/utils";
+import { itemVariants, sectionVariants, numTitle } from "@/lib/utils";
 
 import AboutProfile from "./AboutProfile";
 import AboutCarousel from "./AboutCarousel";
@@ -57,7 +57,7 @@ export default function About() {
                   letterSpacing: "0.16em",
                 }}
               >
-                03 / {t("about")}
+                {numTitle("about")} / {t("about")}
               </Typography>
 
               <Typography
@@ -69,6 +69,7 @@ export default function About() {
                   letterSpacing: "-0.055em",
                   fontSize: { xs: "2.5rem", md: "4rem" },
                   lineHeight: 1.1,
+                  minHeight: { xs: "1.1em", md: "1.1em" },
                 }}
               >
                 {isVisible && (
@@ -91,6 +92,7 @@ export default function About() {
                   fontSize: { xs: "0.95rem", md: "1.1rem" },
                   lineHeight: 1.8,
                   color: "text.secondary",
+                  minHeight: "3.6em",
                 }}
               >
                 {isVisible && (

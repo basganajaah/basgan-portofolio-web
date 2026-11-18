@@ -11,6 +11,37 @@ export function getLocalizedText(
   return value[locale] || value.en || value.id || "";
 }
 
+export function numTitle(section: string) {
+  const sec = section.toLowerCase();
+
+  let secNum = "";
+
+  switch (sec) {
+    case "projects":
+      secNum = "01";
+      break;
+    case "experience":
+      secNum = "02";
+      break;
+    case "about":
+      secNum = "03";
+      break;
+    case "skills":
+      secNum = "04";
+      break;
+    case "certificates":
+      secNum = "05";
+      break;
+    case "contact":
+      secNum = "06";
+      break;
+    default:
+      secNum = "01";
+  }
+
+  return secNum;
+}
+
 export function numSection(category: string) {
   const cat = category.toLowerCase();
 

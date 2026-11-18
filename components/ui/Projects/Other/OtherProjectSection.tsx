@@ -108,7 +108,7 @@ export default function OtherProjectSection({
                       inset: 0,
                       alignItems: "center",
                       justifyContent: "center",
-                      color: "#ffffff",
+                      color: "#eef2ff",
                       opacity: 0,
                       transition: "opacity 0.3s ease",
                       pointerEvents: "none",
@@ -275,7 +275,7 @@ export default function OtherProjectSection({
                         fontWeight: 600,
                         "&:hover": {
                           bgcolor: "#363636",
-                          color: "#ffffff",
+                          color: "#eef2ff",
                         },
                       }}
                     >
@@ -307,7 +307,7 @@ export default function OtherProjectSection({
                         "&:hover": {
                           bgcolor: "#171717",
                           borderColor: "text.primary",
-                          color: "#ffffff",
+                          color: "#eef2ff",
                         },
                       }}
                     >

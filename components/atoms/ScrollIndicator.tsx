@@ -57,7 +57,7 @@ export default function ScrollIndicator() {
               py: 1,
               borderRadius: "50px",
               bgcolor: "#171717",
-              color: "#ffffff",
+              color: "#eef2ff",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
               boxShadow: "0 4px 16px rgba(0, 0, 0, 0.25)",

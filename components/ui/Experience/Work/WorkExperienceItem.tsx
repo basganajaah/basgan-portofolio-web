@@ -60,7 +60,7 @@ export default function WorkExperienceItem({
             borderRadius: 1.5,
             bgcolor: "background.paper",
             border: "2px solid",
-            borderColor: "divider",
+            borderColor: "text.primary",
             overflow: "hidden",
           }}
         >

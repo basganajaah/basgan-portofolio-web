@@ -45,38 +45,82 @@ export default function Navbar() {
       "contact",
     ];
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+    let ticking = false;
 
-      for (let i = sectionIds.length - 1; i >= 0; i--) {
-        const el = document.getElementById(sectionIds[i]);
-        if (el) {
-          const top = el.offsetTop;
-          if (scrollPosition >= top) {
-            setActiveSection(sectionIds[i]);
-            return;
+    const handleScroll = () => {
+      if (ticking) return;
+
+      ticking = true;
+
+      window.requestAnimationFrame(() => {
+        const activationLine = 140;
+        let currentSection = "";
+
+        for (let i = sectionIds.length - 1; i >= 0; i--) {
+          const el = document.getElementById(sectionIds[i]);
+
+          if (!el) continue;
+
+          const sectionTop = el.getBoundingClientRect().top + window.scrollY;
+
+          if (window.scrollY + activationLine >= sectionTop) {
+            currentSection = sectionIds[i];
+            break;
           }
         }
-      }
 
-      if (window.scrollY < 150) {
-        setActiveSection("");
-      }
+        setActiveSection((previous) =>
+          previous === currentSection ? previous : currentSection,
+        );
+
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
     handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, []);
+
+  const scrollToSection = (id: string) => {
+    const el = document.getElementById(id);
+
+    if (!el) return;
+
+    const offset = 100;
+    const targetPosition =
+      el.getBoundingClientRect().top + window.scrollY - offset;
+
+    setActiveSection(id);
+
+    window.scrollTo({
+      top: Math.max(0, targetPosition),
+      behavior: "smooth",
+    });
+
+    window.history.pushState(null, "", `#${id}`);
+  };
+
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    id: string,
+  ) => {
+    e.preventDefault();
+    scrollToSection(id);
+  };
 
   const handleMobileNavClick = (id: string) => {
     setMenuOpen(false);
-    setTimeout(() => {
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-      }
+
+    // Tunggu animasi penutupan menu selesai sebelum menghitung posisi target.
+    window.setTimeout(() => {
+      scrollToSection(id);
     }, 300);
   };
 
@@ -105,7 +149,7 @@ export default function Navbar() {
           maxWidth: "1100px",
           mx: "auto",
           borderRadius: "20px",
-          bgcolor: "rgba(255, 255, 255, 0.8)",
+          bgcolor: "#eef2ff",
           backdropFilter: "blur(16px)",
           border: "2px solid #17171720",
           boxShadow: "0 4px 20px #17171720",
@@ -126,7 +170,10 @@ export default function Navbar() {
             <Box
               component="a"
               href="#home"
-              onClick={() => setMenuOpen(false)}
+              onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                handleNavClick(e, "home");
+                setMenuOpen(false);
+              }}
               sx={{
                 display: "flex",
                 alignItems: "center",
@@ -172,11 +219,14 @@ export default function Navbar() {
                     <Button
                       component="a"
                       href={link.href}
+                      onClick={(e: React.MouseEvent<HTMLAnchorElement>) =>
+                        handleNavClick(e, link.id)
+                      }
                       disableRipple
                       sx={{
                         position: "relative",
                         zIndex: 1,
-                        color: isActive ? "#ffffff" : "text.secondary",
+                        color: isActive ? "#eef2ff" : "text.secondary",
                         fontSize: "0.85rem",
                         fontWeight: isActive ? 700 : 500,
                         textTransform: "none",
@@ -188,7 +238,7 @@ export default function Navbar() {
 
                         "&:hover": {
                           bgcolor: "transparent",
-                          color: isActive ? "#ffffff" : "#171717",
+                          color: isActive ? "#eef2ff" : "#171717",
                         },
 
                         ...(!isActive && {
@@ -256,7 +306,7 @@ export default function Navbar() {
                 endIcon={<Download sx={{ fontSize: 16 }} />}
                 sx={{
                   bgcolor: "#171717",
-                  color: "#fff",
+                  color: "#eef2ff",
                   borderRadius: "10px",
                   px: 2,
                   py: 1,
@@ -310,7 +360,7 @@ export default function Navbar() {
                         onClick={() => handleMobileNavClick(link.id)}
                         sx={{
                           justifyContent: "flex-start",
-                          color: isActive ? "#ffffff" : "text.secondary",
+                          color: isActive ? "#eef2ff" : "text.secondary",
                           bgcolor: isActive ? "#171717" : "transparent",
                           textTransform: "none",
                           fontSize: "0.9rem",
@@ -319,7 +369,7 @@ export default function Navbar() {
                           px: 1.5,
                           py: 1,
                           "&:hover": {
-                            color: "#ffffff",
+                            color: "#eef2ff",
                             bgcolor: isActive
                               ? "#171717"
                               : "rgba(23, 23, 23, 0.08)",
@@ -366,7 +416,7 @@ export default function Navbar() {
                     fullWidth
                     sx={{
                       bgcolor: "#171717",
-                      color: "#fff",
+                      color: "#eef2ff",
                       mt: 1,
                       py: 1.2,
                       borderRadius: "10px",

@@ -98,7 +98,7 @@ export default function AcademicProjectCard({
             alignItems: "center",
             justifyContent: "center",
             borderRadius: 1,
-            bgcolor: "#ffffff",
+            bgcolor: "#eef2ff",
             color: "text.primary",
           }}
         >
@@ -221,7 +221,7 @@ export default function AcademicProjectCard({
                   fontWeight: 600,
                   "&:hover": {
                     bgcolor: "#363636",
-                    color: "#ffffff",
+                    color: "#eef2ff",
                   },
                 }}
               >
@@ -247,7 +247,7 @@ export default function AcademicProjectCard({
                   "&:hover": {
                     bgcolor: "#171717",
                     borderColor: "text.primary",
-                    color: "#ffffff",
+                    color: "#eef2ff",
                   },
                 }}
               >

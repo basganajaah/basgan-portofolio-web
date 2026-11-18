@@ -67,9 +67,5 @@ export const educations: Education[] = [
       en: "2023 — 2026",
     },
     gpaScore: "3.61 / 4.00  Cum Laude",
-    // description: {
-    //   id: "Deskripsi singkat pendidikan.",
-    //   en: "A brief description of the education.",
-    // },
   },
 ];

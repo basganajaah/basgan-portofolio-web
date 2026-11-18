@@ -50,7 +50,7 @@
   "Experience": {
     "experience": "EXPERIENCE",
     "title": "My Experience",
-    "subtitle": "My professional and academic journey developing software solutions and contributing across diverse teams.",
+    "subtitle": "An overview of my professional and academic journey, highlighting the experiences, responsibilities, and contributions that have shaped my growth in software development and collaborative environments.",
     "work": "Work Experience",
     "education": "Education",
     "key-contributions": "Key Contributions",
@@ -60,19 +60,50 @@
   },
 
   "About": {
-  "about": "ABOUT",
-  "title": "About Me",
-  "subtitle": "A little about who I am, what I do, and the things I enjoy beyond coding.",
-  "profile": "Profile",
-  "interest": "Interest",
-  "carouselLabel": "Personal interests and activities",
-  "notProvided": "Not specified",
-  "profileFields": {
-    "fullName": "Full Name",
-    "birthplace": "Birthplace",
-    "location": "Based in",
-    "workMode": "Work Mode",
-    "languages": "Languages"
+    "about": "ABOUT",
+    "title": "About Me",
+    "subtitle": "Get to know me beyond my professional background, including my personal profile, interests, activities, and the things that inspire me both in and outside the world of technology.",
+    "profile": "Profile",
+    "interest": "Interest",
+    "carouselLabel": "Personal interests and activities",
+    "notProvided": "Not specified",
+    "profileFields": {
+      "fullName": "Full Name",
+      "birthplace": "Birthplace",
+      "location": "Based in",
+      "workMode": "Work Mode",
+      "languages": "Languages"
+    }
+  },
+
+  "Skills": {
+    "skills": "SKILLS",
+    "title": "My Skills",
+    "subtitle": "An overview of the programming languages, frameworks, libraries, and development tools I have worked with, reflecting my technical capabilities and continuous learning journey in building modern digital solutions.",
+    "categories": {
+      "languages": "Languages & Web Fundamentals",
+      "frameworks": "Frameworks & Libraries",
+      "tools": "Database, Tools & Platforms"
+    },
+    "levels": {
+      "strong": {
+        "before": "STRONG AND ",
+        "highlight": "PRO",
+        "after": "FICIENT",
+        "description": "Demonstrates strong understanding and hands-on experience, with the ability to independently apply these technologies in projects."
+      },
+      "intermediate": {
+        "before": "INTER",
+        "highlight": "MEDIATE",
+        "after": " LEVEL",
+        "description": "Understands the core concepts and practical use of these technologies, with growing experience and room for further development."
+      },
+      "basic": {
+        "before": "",
+        "highlight": "BASIC",
+        "after": " KNOWLEDGE",
+        "description": "Has foundational knowledge of these technologies and is continuing to build experience through learning and practice."
+      }
+    }
   }
-}
 }

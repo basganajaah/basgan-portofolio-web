@@ -25,6 +25,7 @@ export const projects: Project[] = [
       "Next.js",
       "NestJS",
       "TypeScript",
+      "shadcn/ui",
       "Prisma",
       "PostgreSQL",
       "Tailwind CSS",
@@ -267,7 +268,7 @@ export const projects: Project[] = [
       "Material UI",
       "Echarts",
       "Mapbox-GL",
-      "Framer Motion",
+      "MSW",
     ],
     roles: ["Frontend Engineer"],
     contributions: [

@@ -50,7 +50,7 @@
   "Experience": {
     "experience": "PENGALAMAN",
     "title": "Pengalaman Saya",
-    "subtitle": "Perjalanan profesional dan akademis saya dalam mengembangkan solusi perangkat lunak serta kontribusi dalam berbagai tim.",
+    "subtitle": "Gambaran perjalanan profesional dan akademis saya, mulai dari pengalaman, tanggung jawab, hingga kontribusi yang turut membentuk perkembangan kemampuan saya dalam bidang pengembangan perangkat lunak dan kerja sama tim.",
     "work": "Pengalaman Kerja",
     "education": "Pendidikan",
     "key-contributions": "Kontribusi Utama",
@@ -62,7 +62,7 @@
   "About": {
     "about": "TENTANG",
     "title": "Tentang Saya",
-    "subtitle": "Mengenal lebih jauh tentang diri saya, aktivitas, dan hal-hal yang saya sukai di luar dunia programming.",
+    "subtitle": "Mengenal saya lebih jauh di luar latar belakang profesional, mulai dari profil pribadi, minat, aktivitas, hingga berbagai hal yang menginspirasi saya, baik di dalam maupun di luar dunia teknologi.",
     "profile": "Profile",
     "interest": "Interest",
     "carouselLabel": "Minat dan aktivitas pribadi",
@@ -73,6 +73,37 @@
       "location": "Domisili",
       "workMode": "Mode Kerja",
       "languages": "Bahasa"
+    }
+  },
+
+  "Skills": {
+    "skills": "KEAHLIAN",
+    "title": "Keahlian Saya",
+    "subtitle": "Gambaran berbagai bahasa pemrograman, framework, library, dan tools pengembangan yang pernah saya gunakan, sekaligus mencerminkan kemampuan teknis serta proses belajar berkelanjutan dalam membangun solusi digital modern.",
+    "categories": {
+      "languages": "Bahasa & Dasar Web",
+      "frameworks": "Framework & Library",
+      "tools": "Basis Data, Tools & Platform"
+    },
+    "levels": {
+      "strong": {
+        "before": "MAHIR DAN ",
+        "highlight": "PRO",
+        "after": "FESIONAL",
+        "description": "Memiliki pemahaman dan pengalaman yang kuat serta mampu mengimplementasikan teknologi secara mandiri dalam pengembangan proyek."
+      },
+      "intermediate": {
+        "before": "TINGKAT ",
+        "highlight": "MENENGAH",
+        "after": "",
+        "description": "Memahami konsep dan penggunaan teknologi serta mampu menerapkannya dengan baik, meskipun masih terus mengembangkan pengalaman dan pendalaman."
+      },
+      "basic": {
+        "before": "PENGETAHUAN ",
+        "highlight": "DASAR",
+        "after": "",
+        "description": "Memiliki pemahaman dasar mengenai konsep dan penggunaan teknologi serta sedang membangun pengalaman melalui pembelajaran dan praktik."
+      }
     }
   }
 }

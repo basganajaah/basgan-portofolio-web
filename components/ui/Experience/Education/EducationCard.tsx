@@ -40,7 +40,7 @@ export default function EducationCard({ education }: EducationCardProps) {
       <Box
         sx={{
           p: { xs: 2, sm: 2.5, md: 3 },
-          border: "4px solid",
+          border: "2px solid",
           borderColor: "text.primary",
           borderRadius: 2,
           bgcolor: "background.paper",
@@ -69,7 +69,7 @@ export default function EducationCard({ education }: EducationCardProps) {
               borderRadius: 1.5,
               bgcolor: "background.paper",
               border: "2px solid",
-              borderColor: "divider",
+              borderColor: "text.primary",
               overflow: "hidden",
             }}
           >

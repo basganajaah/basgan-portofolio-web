@@ -21,7 +21,7 @@ export default function LanguageSwitcher() {
       spacing={0.5}
       sx={{
         border: "2px solid #171717",
-        bgColor: "#ffffff",
+        bgColor: "#eef2ff",
         borderRadius: "50px",
         p: 0.4,
         alignItems: "center",
@@ -37,7 +37,7 @@ export default function LanguageSwitcher() {
           borderRadius: 20,
           fontSize: "0.75rem",
           fontWeight: 700,
-          color: locale === "id" ? "white" : "text.primary",
+          color: locale === "id" ? "#eef2ff" : "text.primary",
           bgcolor: locale === "id" ? "primary.main" : "transparent",
           "&:hover": {
             bgcolor: locale === "id" ? "primary.main" : "action.hover",
@@ -68,7 +68,7 @@ export default function LanguageSwitcher() {
           borderRadius: 20,
           fontSize: "0.75rem",
           fontWeight: 700,
-          color: locale === "en" ? "white" : "text.primary",
+          color: locale === "en" ? "#eef2ff" : "text.primary",
           bgcolor: locale === "en" ? "primary.main" : "transparent",
           "&:hover": {
             bgcolor: locale === "en" ? "primary.main" : "action.hover",

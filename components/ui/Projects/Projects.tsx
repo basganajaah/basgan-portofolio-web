@@ -10,6 +10,7 @@ import InternshipProject from "./Internship/InternshipProject";
 import AcademicProject from "./Academic/AcademicProject";
 import OtherProject from "./Other/OtherProject";
 import { useState } from "react";
+import { numTitle } from "@/lib/utils";
 
 export default function Projects() {
   const t = useTranslations("Projects");
@@ -50,7 +51,7 @@ export default function Projects() {
                 letterSpacing: "0.16em",
               }}
             >
-              01 / {t("projects")}
+              {numTitle("projects")} / {t("projects")}
             </Typography>
 
             <Typography
@@ -62,6 +63,7 @@ export default function Projects() {
                 letterSpacing: "-0.055em",
                 fontSize: { xs: "2.5rem", md: "4rem" },
                 lineHeight: 1.1,
+                minHeight: { xs: "1.1em", md: "1.1em" },
               }}
             >
               {isVisible && (
@@ -84,6 +86,7 @@ export default function Projects() {
                 fontSize: { xs: "0.95rem", md: "1.1rem" },
                 lineHeight: 1.8,
                 color: "text.secondary",
+                minHeight: "3.6em",
               }}
             >
               {isVisible && (
