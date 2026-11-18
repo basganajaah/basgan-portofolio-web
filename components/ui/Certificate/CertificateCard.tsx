@@ -127,13 +127,13 @@ export default function CertificateCard({
 
           <Typography
             variant="body2"
-            color="text.secondary"
             sx={{
               lineHeight: 1.6,
               display: "-webkit-box",
               WebkitBoxOrient: "vertical",
               WebkitLineClamp: 2,
               overflow: "hidden",
+              color: "text.secondary",
             }}
           >
             {description}
@@ -151,7 +151,7 @@ export default function CertificateCard({
             </Typography>
 
             {certificate.issueDate && (
-              <Typography variant="caption" color="text.secondary">
+              <Typography variant="caption" sx={{ color: "text.secondary" }}>
                 {t("issued")} {formatDate(certificate.issueDate)}
               </Typography>
             )}

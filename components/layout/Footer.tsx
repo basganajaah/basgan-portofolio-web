@@ -21,47 +21,51 @@ export default function Footer() {
       component="footer"
       sx={{
         position: "relative",
-        mt: { xs: 6, md: 2 },
-        pt: { xs: 6, md: 2 },
-        pb: { xs: 2, md: 1.5 },
+        mt: { xs: 6, md: 4 },
+        pt: { xs: 6, md: 4 },
+        pb: 0,
         bgcolor: "background.default",
+        overflow: "hidden",
       }}
     >
-      {/* Wave Divider */}
+      {/* City Skyline Background Decoration across entire Footer root */}
       <Box
-        component="svg"
-        viewBox="0 0 1440 100"
-        preserveAspectRatio="none"
         aria-hidden="true"
         sx={{
           position: "absolute",
-          top: -1,
+          bottom: 0,
           left: 0,
+          right: 0,
           width: "100%",
-          height: { xs: 45, md: 75 },
-          display: "block",
-          color: "background.default",
+          height: { xs: 150, sm: 190, md: 230, lg: 260 },
           pointerEvents: "none",
+          zIndex: 0,
+          opacity: 0.22,
+          backgroundImage: "url('/images/footer.png')",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center bottom",
+          backgroundSize: "contain",
+          maskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 65%, rgba(0,0,0,0) 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 65%, rgba(0,0,0,0) 100%)",
         }}
-      >
-        <path
-          d="M0,35 C180,85 360,5 540,35 C720,70 900,90 1080,42 C1230,2 1350,20 1440,40 L1440,100 L0,100 Z"
-          fill="currentColor"
-        />
-      </Box>
+      />
 
+      {/* Animated Brand */}
       <Container
         maxWidth={false}
         sx={{
           maxWidth: "1440px",
           px: { xs: 2.5, sm: 4, md: 6, lg: 8 },
           mx: "auto",
+          position: "relative",
+          zIndex: 1,
         }}
       >
-        {/* Animated Brand */}
         <Box
           sx={{
-            mb: { xs: 4, md: 5 },
+            mb: { xs: 3, md: 4 },
             py: { xs: 1, md: 1.5 },
             textAlign: "center",
             overflow: "visible",
@@ -78,9 +82,8 @@ export default function Footer() {
             <Box
               component={motion.div}
               whileHover={{
-                y: -5,
-                rotate: 8,
-                scale: 1.08,
+                y: -8,
+                scale: 1.1,
               }}
               transition={{
                 type: "spring",
@@ -91,12 +94,8 @@ export default function Footer() {
                 width: { xs: 48, md: 64 },
                 height: { xs: 48, md: 64 },
                 position: "relative",
-                borderRadius: 2.5,
                 overflow: "visible",
-                boxShadow: (theme) =>
-                  theme.palette.mode === "dark"
-                    ? "0 4px 12px rgba(0,0,0,0.22)"
-                    : "0 4px 12px rgba(0,0,0,0.10)",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.10)",
                 filter: "drop-shadow(0 2px 3px rgba(0,0,0,0.04))",
               }}
             >
@@ -127,12 +126,12 @@ export default function Footer() {
                   component={motion.span}
                   key={`${letter}-${index}`}
                   whileHover={{
-                    y: -12,
-                    color: "primary.main",
+                    y: -22,
+                    scale: 1.15,
                     transition: {
                       type: "spring",
                       stiffness: 300,
-                      damping: 12,
+                      damping: 10,
                     },
                   }}
                   sx={{
@@ -146,11 +145,14 @@ export default function Footer() {
                     fontWeight: 900,
                     letterSpacing: {
                       xs: "-0.08em",
-                      md: "-0.1em",
+                      md: "0.25rem",
                     },
                     color: "text.primary",
                     userSelect: "none",
                     transition: "color 0.25s ease",
+                    "&:hover": {
+                      color: "primary.main",
+                    },
                   }}
                 >
                   {letter}
@@ -159,69 +161,98 @@ export default function Footer() {
             </Stack>
           </Stack>
         </Box>
+      </Container>
 
-        {/* Footer Information */}
-        <Stack
-          direction={{ xs: "column", md: "row" }}
-          spacing={{ xs: 2.5, md: 2 }}
+      {/* Footer Bottom Content */}
+      <Box
+        sx={{
+          position: "relative",
+          width: "100%",
+          zIndex: 1,
+        }}
+      >
+        <Container
+          maxWidth={false}
           sx={{
-            alignItems: { xs: "flex-start", md: "center" },
-            justifyContent: "space-between",
+            maxWidth: "1440px",
+            px: { xs: 2.5, sm: 4, md: 6, lg: 8 },
+            mx: "auto",
+            position: "relative",
+            pt: { xs: 2, sm: 3, md: 4 },
+            pb: { xs: 3.5, sm: 4, md: 4.5 },
           }}
         >
-          <Box>
-            <Typography
-              variant="body2"
-              sx={{
-                fontWeight: 700,
-                color: "text.primary",
-                fontSize: "0.85rem",
-              }}
-            >
-              {t("copyright")}
-            </Typography>
-
-            <Typography
-              variant="caption"
-              sx={{
-                display: "block",
-                mt: 0.6,
-                color: "text.secondary",
-                fontSize: "0.75rem",
-                lineHeight: 1.6,
-              }}
-            >
-              {t("builtWith")}
-            </Typography>
-          </Box>
-
-          <Button
-            onClick={handleBackToTop}
-            variant="outlined"
-            size="small"
-            endIcon={<KeyboardArrowUpRoundedIcon />}
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={{ xs: 2.5, sm: 2 }}
             sx={{
-              px: 1.8,
-              py: 0.8,
-              borderRadius: 2,
-              border: "2px solid",
-              borderColor: "text.primary",
-              color: "text.primary",
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              textTransform: "none",
-              transition: "all 0.25s ease",
-              "&:hover": {
-                color: "#eef2ff",
-                bgcolor: "text.primary",
-                transform: "translateY(-2px)",
-              },
+              alignItems: { xs: "center", sm: "center" },
+              justifyContent: "space-between",
+              textAlign: { xs: "center", sm: "left" },
+              width: "100%",
             }}
           >
-            {t("backToTop")}
-          </Button>
-        </Stack>
-      </Container>
+            {/* Copyright and Built With */}
+            <Box
+              sx={{
+                maxWidth: { xs: "100%", sm: "70%", md: "65%" },
+              }}
+            >
+              <Typography
+                variant="body2"
+                sx={{
+                  fontWeight: 700,
+                  color: "text.primary",
+                  fontSize: { xs: "0.85rem", md: "0.9rem" },
+                  letterSpacing: "0.01em",
+                }}
+              >
+                {t("copyright")}
+              </Typography>
+
+              <Typography
+                variant="caption"
+                sx={{
+                  fontWeight: 500,
+                  display: "block",
+                  mt: 0.6,
+                  color: "text.primary",
+                  fontSize: { xs: "0.75rem", md: "0.8rem" },
+                  lineHeight: 1.6,
+                }}
+              >
+                {t("builtWith")}
+              </Typography>
+            </Box>
+
+            {/* Back to Top */}
+            <Button
+              onClick={handleBackToTop}
+              variant="outlined"
+              size="small"
+              endIcon={<KeyboardArrowUpRoundedIcon />}
+              sx={{
+                px: 2,
+                py: 0.85,
+                borderRadius: 2,
+                bgcolor: "text.primary",
+                color: "#eef2ff",
+                backdropFilter: "blur(8px)",
+                fontSize: "0.8rem",
+                fontWeight: 500,
+                textTransform: "none",
+                transition: "all 0.25s ease",
+                boxShadow: "0 4px 14px rgba(0,0,0,0.08)",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                },
+              }}
+            >
+              {t("backToTop")}
+            </Button>
+          </Stack>
+        </Container>
+      </Box>
     </Box>
   );
 }

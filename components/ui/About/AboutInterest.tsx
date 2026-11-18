@@ -115,7 +115,7 @@ export default function AboutInterest({
             className="interest-background-icon"
             aria-hidden="true"
             sx={{
-              fontSize: { xs: 150, md: 185 },
+              fontSize: { xs: 175, md: 185 },
               color: "primary.main",
               transform: "rotate(-15deg)",
               transition: "all 0.35s ease",
@@ -137,8 +137,9 @@ export default function AboutInterest({
           sx={{
             fontWeight: 800,
             letterSpacing: "-0.035em",
-            mb: 2,
-            fontSize: { xs: "2rem", lg: "3rem" },
+            mb: 1,
+            fontSize: { xs: "4rem", lg: "3rem" },
+            textAlign: "end"
           }}
         >
           {t("interest")}
@@ -162,7 +163,7 @@ export default function AboutInterest({
               letterSpacing: "-0.045em",
               lineHeight: 1.3,
               fontSize: {
-                xs: "1.45rem",
+                xs: "2rem",
                 lg: "1.6rem",
               },
               whiteSpace: "nowrap",

@@ -10,8 +10,8 @@ export const aboutInterests: AboutInterest[] = [
       en: "Web and application development activity",
     },
     title: {
-      id: "Web Development",
-      en: "Web Development",
+      id: "Coding Produktif",
+      en: "Productive Coding",
     },
     description: {
       id: "Berpasion dalam membangun aplikasi web dan mobile modern yang intuitif, performa optimal, serta memanfaatkan teknologi terkini.",
@@ -27,11 +27,11 @@ export const aboutInterests: AboutInterest[] = [
       en: "Gaming activity",
     },
     title: {
-      id: "Gaming Enthusiast",
+      id: "Bermain Game",
       en: "Gaming Enthusiast",
     },
     description: {
-      id: "Di luar dunia programming, saya menikmati bermain game sebagai hiburan, mengeksplorasi dunia virtual, dan menikmati berbagai pengalaman interaktif.",
+      id: "Saya menikmati bermain game sebagai hiburan, mengeksplorasi dunia virtual, dan menikmati pengalaman interaktif.",
       en: "Outside programming, I enjoy gaming as a way to unwind, explore virtual worlds, and experience interactive storytelling.",
     },
   },
@@ -61,7 +61,7 @@ export const aboutInterests: AboutInterest[] = [
       en: "Writing articles",
     },
     title: {
-      id: "Medium Writer",
+      id: "Penulis Medium",
       en: "Medium Writer",
     },
     description: {

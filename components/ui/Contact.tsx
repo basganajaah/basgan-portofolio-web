@@ -38,6 +38,7 @@ const socialLinks = [
 export default function Contact() {
   const t = useTranslations("Contact");
   const [copied, setCopied] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const handleCopyEmail = async () => {
     try {
@@ -55,6 +56,7 @@ export default function Contact() {
       component="section"
       id="contact"
       sx={{
+        pt: { xs: 2, md: 4 },
         pb: { xs: 4, md: 6 },
         scrollMarginTop: "100px",
       }}
@@ -65,10 +67,18 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.55, ease: "easeOut" }}
+          onViewportEnter={() => setIsVisible(true)}
+          style={{
+            width: "100%",
+            minWidth: 0,
+          }}
         >
           <Box
             sx={{
               position: "relative",
+              width: "100%",
+              minWidth: 0,
+              boxSizing: "border-box",
               overflow: "hidden",
               p: { xs: 2.5, sm: 3, md: 4 },
               borderRadius: { xs: 2.5, md: 3 },
@@ -111,8 +121,14 @@ export default function Contact() {
               },
             }}
           >
-            <Stack spacing={{ xs: 2.5, md: 3 }}>
-              <Box>
+            <Stack
+              spacing={{ xs: 2.5, md: 3 }}
+              sx={{
+                width: "100%",
+                minWidth: 0,
+              }}
+            >
+              <Box sx={{ width: "100%", minWidth: 0 }}>
                 <Typography
                   variant="overline"
                   sx={{
@@ -125,10 +141,13 @@ export default function Contact() {
                   {numTitle("contact")} / {t("contact")}
                 </Typography>
 
+                {/* Animated Title */}
                 <Box
                   sx={{
                     mt: 1,
+                    width: "100%",
                     maxWidth: 680,
+                    minWidth: 0,
                     minHeight: {
                       xs: "5.2rem",
                       sm: "6.3rem",
@@ -143,6 +162,9 @@ export default function Contact() {
                     component="div"
                     sx={{
                       width: "100%",
+                      maxWidth: "100%",
+                      minWidth: 0,
+                      overflowWrap: "anywhere",
                       fontWeight: 800,
                       letterSpacing: "-0.05em",
                       lineHeight: 1.12,
@@ -154,38 +176,80 @@ export default function Contact() {
                       color: "text.primary",
                     }}
                   >
-                    <Typewriter
-                      onInit={(typewriter) => {
-                        typewriter.typeString(t("title")).start();
-                      }}
-                      options={{
-                        delay: 35,
-                        cursor: "",
-                      }}
-                    />
+                    {isVisible && (
+                      <Typewriter
+                        onInit={(typewriter) => {
+                          typewriter.typeString(t("title")).start();
+                        }}
+                        options={{
+                          delay: 35,
+                          cursor: "",
+                        }}
+                      />
+                    )}
                   </Typography>
                 </Box>
 
-                <Typography
+                {/* Animated Description */}
+                <Box
                   sx={{
                     mt: 1.5,
+                    width: "100%",
                     maxWidth: 600,
-                    color: "text.secondary",
-                    lineHeight: 1.7,
-                    fontSize: { xs: "0.875rem", md: "0.95rem" },
+                    minWidth: 0,
+                    minHeight: {
+                      xs: "5rem",
+                      sm: "4rem",
+                      md: "3.5rem",
+                    },
+                    display: "flex",
+                    alignItems: "flex-start",
                   }}
                 >
-                  {t("description")}
-                </Typography>
+                  <Typography
+                    component="div"
+                    sx={{
+                      width: "100%",
+                      maxWidth: "100%",
+                      minWidth: 0,
+                      overflowWrap: "anywhere",
+                      whiteSpace: "normal",
+                      color: "text.secondary",
+                      lineHeight: 1.7,
+                      fontSize: {
+                        xs: "0.875rem",
+                        md: "0.95rem",
+                      },
+                    }}
+                  >
+                    {isVisible && (
+                      <Typewriter
+                        onInit={(typewriter) => {
+                          typewriter.typeString(t("description")).start();
+                        }}
+                        options={{
+                          delay: 5,
+                          cursor: "",
+                        }}
+                      />
+                    )}
+                  </Typography>
+                </Box>
               </Box>
 
+              {/* Contact Actions */}
               <Stack
                 direction={{ xs: "column", sm: "row" }}
                 spacing={1.2}
                 useFlexGap
                 sx={{
+                  width: "100%",
+                  minWidth: 0,
                   flexWrap: "wrap",
-                  alignItems: { xs: "stretch", sm: "center" },
+                  alignItems: {
+                    xs: "stretch",
+                    sm: "center",
+                  },
                 }}
               >
                 <Button
@@ -242,9 +306,21 @@ export default function Contact() {
                       <AnimatePresence mode="wait" initial={false}>
                         <motion.span
                           key={copied ? "check" : "copy"}
-                          initial={{ opacity: 0, rotate: -90, y: 6 }}
-                          animate={{ opacity: 1, rotate: 0, y: 0 }}
-                          exit={{ opacity: 0, rotate: 90, y: -6 }}
+                          initial={{
+                            opacity: 0,
+                            rotate: -90,
+                            y: 6,
+                          }}
+                          animate={{
+                            opacity: 1,
+                            rotate: 0,
+                            y: 0,
+                          }}
+                          exit={{
+                            opacity: 0,
+                            rotate: 90,
+                            y: -6,
+                          }}
                           transition={{ duration: 0.2 }}
                           style={{
                             position: "absolute",
@@ -264,7 +340,7 @@ export default function Contact() {
                       </AnimatePresence>
                     </Box>
 
-                    {/* Fixed text container */}
+                    {/* Fixed Text Container */}
                     <Box
                       sx={{
                         position: "relative",
@@ -275,7 +351,6 @@ export default function Contact() {
                         lineHeight: "1.4em",
                       }}
                     >
-                      {/* Maintain button width */}
                       <Box
                         component="span"
                         sx={{
@@ -290,9 +365,18 @@ export default function Contact() {
                       <AnimatePresence mode="popLayout" initial={false}>
                         <motion.span
                           key={copied ? "copied" : "copy"}
-                          initial={{ y: "100%", opacity: 0 }}
-                          animate={{ y: 0, opacity: 1 }}
-                          exit={{ y: "-100%", opacity: 0 }}
+                          initial={{
+                            y: "100%",
+                            opacity: 0,
+                          }}
+                          animate={{
+                            y: 0,
+                            opacity: 1,
+                          }}
+                          exit={{
+                            y: "-100%",
+                            opacity: 0,
+                          }}
                           transition={{
                             duration: 0.22,
                             ease: "easeInOut",
@@ -329,22 +413,34 @@ export default function Contact() {
                 </Button>
               </Stack>
 
+              {/* Social Links */}
               <Box
                 sx={{
+                  width: "100%",
+                  minWidth: 0,
                   pt: 2,
                   borderTop: "2px solid",
                   borderColor: "text.primary",
                   display: "flex",
-                  flexDirection: { xs: "column", sm: "row" },
-                  alignItems: { xs: "flex-start", sm: "center" },
+                  flexDirection: {
+                    xs: "column",
+                    sm: "row",
+                  },
+                  alignItems: {
+                    xs: "flex-start",
+                    sm: "center",
+                  },
                   justifyContent: "flex-end",
                   gap: 1.5,
                 }}
               >
                 <Typography
                   variant="body2"
-                  color="text.secondary"
-                  sx={{ fontWeight: 600, fontSize: "0.8rem" }}
+                  sx={{
+                    fontWeight: 600,
+                    fontSize: "0.8rem",
+                    color: "text.primary",
+                  }}
                 >
                   {t("socialTitle")}
                 </Typography>
@@ -362,15 +458,13 @@ export default function Contact() {
                       sx={{
                         width: 36,
                         height: 36,
-                        border: 1,
-                        borderColor: "divider",
-                        color: "text.secondary",
+                        color: "#eef2ff",
+                        bgcolor: "text.primary",
                         transition: "all 0.2s ease",
                         "&:hover": {
-                          color: "text.primary",
-                          borderColor: "text.primary",
-                          bgcolor: "action.hover",
-                          transform: "translateY(-2px)",
+                          color: "#eef2ff",
+                          bgcolor: "text.primary",
+                          transform: "translateY(-5px)",
                         },
                       }}
                     >

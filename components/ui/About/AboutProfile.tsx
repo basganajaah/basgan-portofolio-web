@@ -82,8 +82,10 @@ export default function AboutProfile({ isVisible }: AboutProfileProps) {
         variant="h5"
         sx={{
           fontWeight: 800,
-          letterSpacing: "-0.035em",
-          mb: 2.5,
+          letterSpacing: "-0.015em",
+          mb: 1,
+          fontSize: { xs: "2.5rem", lg: "3rem" },
+          textAlign: "end"
         }}
       >
         {t("profile")}
@@ -113,7 +115,7 @@ export default function AboutProfile({ isVisible }: AboutProfileProps) {
             <Typography
               variant="caption"
               sx={{
-                color: "text.secondary",
+                color: "text.primary",
                 fontWeight: 700,
                 letterSpacing: "0.055em",
                 lineHeight: 1.3,
@@ -130,7 +132,7 @@ export default function AboutProfile({ isVisible }: AboutProfileProps) {
                 fontSize: "0.84rem",
                 fontWeight: 600,
                 lineHeight: "22px",
-                color: "text.primary",
+                color: "text.secondary",
                 whiteSpace: "nowrap",
                 textOverflow: "ellipsis",
               }}

@@ -282,7 +282,7 @@ export default function InternshipProjectDrawer({
                     justifyContent: "center",
                     borderRight:
                       index !== project.uniqueFacts!.length - 1
-                        ? "2px solid"
+                        ? { xs: "1px solid", md: "2px solid" }
                         : "none",
                     borderColor: "#B2BEB5",
                     minWidth: 0,

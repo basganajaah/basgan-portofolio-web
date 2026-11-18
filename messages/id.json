@@ -87,9 +87,9 @@
     },
     "levels": {
       "strong": {
-        "before": "MAHIR DAN ",
-        "highlight": "PRO",
-        "after": "FESIONAL",
+        "before": "",
+        "highlight": "MAHIR ",
+        "after": "DAN KOMPETEN",
         "description": "Memiliki pemahaman dan pengalaman yang kuat serta mampu mengimplementasikan teknologi secara mandiri dalam pengembangan proyek."
       },
       "intermediate": {
@@ -99,7 +99,7 @@
         "description": "Memahami konsep dan penggunaan teknologi serta mampu menerapkannya dengan baik, meskipun masih terus mengembangkan pengalaman dan pendalaman."
       },
       "basic": {
-        "before": "PENGETAHUAN ",
+        "before": "PEMAHAMAN ",
         "highlight": "DASAR",
         "after": "",
         "description": "Memiliki pemahaman dasar mengenai konsep dan penggunaan teknologi serta sedang membangun pengalaman melalui pembelajaran dan praktik."
@@ -124,7 +124,7 @@
   "Contact": {
     "contact": "KONTAK",
     "title": "Punya ide menarik? Mari kita wujudkan bersama!",
-    "description": "Saya selalu terbuka untuk peluang baru, kolaborasi, maupun diskusi seputar teknologi dan pengembangan perangkat lunak. Jangan ragu untuk menghubungi saya!",
+    "description": "Saya selalu terbuka untuk peluang baru, kolaborasi, maupun diskusi seputar teknologi dan pengembangan perangkat lunak. Mari terkoneksi!",
     "emailCta": "Hubungi Saya",
     "copyEmail": "Salin Email",
     "copied": "Email Tersalin",

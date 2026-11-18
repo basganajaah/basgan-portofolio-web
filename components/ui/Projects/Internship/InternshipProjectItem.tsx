@@ -269,7 +269,7 @@ export default function InternshipProjectItem({
                       <Typography
                         component="span"
                         variant="caption"
-                        color="text.secondary"
+                        sx={{ color: "text.secondary" }}
                       >
                         {getLocalizedText(scItem, locale)}
                       </Typography>

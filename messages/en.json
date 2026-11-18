@@ -87,7 +87,7 @@
     },
     "levels": {
       "strong": {
-        "before": "STRONG AND ",
+        "before": "SKILLED AND ",
         "highlight": "PRO",
         "after": "FICIENT",
         "description": "Demonstrates strong understanding and hands-on experience, with the ability to independently apply these technologies in projects."

@@ -140,8 +140,7 @@ export default function CertificateDetailModal({
               </Typography>
 
               <Typography
-                color="text.secondary"
-                sx={{ mt: 0.75, fontWeight: 600 }}
+                sx={{ mt: 0.75, fontWeight: 600, color: "text.secondary" }}
               >
                 {certificate.organization}
               </Typography>
@@ -149,8 +148,7 @@ export default function CertificateDetailModal({
 
             <Typography
               variant="body2"
-              color="text.secondary"
-              sx={{ lineHeight: 1.8 }}
+              sx={{ lineHeight: 1.8, color: "text.secondary" }}
             >
               {description}
             </Typography>
@@ -169,7 +167,10 @@ export default function CertificateDetailModal({
             >
               {certificate.issueDate && (
                 <Box>
-                  <Typography variant="caption" color="text.secondary">
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary" }}
+                  >
                     {t("issueDate")}
                   </Typography>
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
@@ -180,7 +181,10 @@ export default function CertificateDetailModal({
 
               {certificate.expirationDate && (
                 <Box>
-                  <Typography variant="caption" color="text.secondary">
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary" }}
+                  >
                     {t("expirationDate")}
                   </Typography>
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
@@ -191,7 +195,10 @@ export default function CertificateDetailModal({
 
               {certificate.score && (
                 <Box>
-                  <Typography variant="caption" color="text.secondary">
+                  <Typography
+                    variant="caption"
+                    sx={{ color: "text.secondary" }}
+                  >
                     {t("score")}
                   </Typography>
                   <Typography variant="body2" sx={{ fontWeight: 600 }}>
