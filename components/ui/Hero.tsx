@@ -236,7 +236,7 @@ export default function Hero() {
                   endIcon={<ArrowOutwardIcon sx={{ fontSize: 17 }} />}
                   sx={{
                     bgcolor: "#171717",
-                    color: "#eef2ff",
+                    color: "background.paper",
                     borderRadius: "12px",
                     px: 2.5,
                     py: 1.5,
@@ -262,7 +262,7 @@ export default function Hero() {
                     textTransform: "none",
                     fontWeight: 600,
                     "&:hover": {
-                      color: "#eef2ff",
+                      color: "background.paper",
                       bgcolor: "text.primary",
                     },
                   }}

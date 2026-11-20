@@ -18,7 +18,7 @@ export default function Chip({
         {
           fontSize: { xs: "0.65rem", md: "0.75rem" },
           border: "none",
-          color: "#eef2ff",
+          color: "background.paper",
           fontWeight: 500,
         },
         variant === "outlined"

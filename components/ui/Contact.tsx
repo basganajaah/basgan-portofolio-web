@@ -82,7 +82,7 @@ export default function Contact() {
               overflow: "hidden",
               p: { xs: 2.5, sm: 3, md: 4 },
               borderRadius: { xs: 2.5, md: 3 },
-              bgcolor: "#eef2ff",
+              bgcolor: "background.paper",
               borderColor: "text.primary",
 
               boxShadow: (theme) =>
@@ -458,11 +458,11 @@ export default function Contact() {
                       sx={{
                         width: 36,
                         height: 36,
-                        color: "#eef2ff",
+                        color: "background.paper",
                         bgcolor: "text.primary",
                         transition: "all 0.2s ease",
                         "&:hover": {
-                          color: "#eef2ff",
+                          color: "background.paper",
                           bgcolor: "text.primary",
                           transform: "translateY(-5px)",
                         },

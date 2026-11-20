@@ -90,7 +90,7 @@ export default function FeaturedProjectGallery({
                 fill
                 priority={activeIndex === 0}
                 sizes="(max-width: 900px) 100vw, 1100px"
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ objectFit: "fill", objectPosition: "center" }}
                 onError={() => handleError(activeImage)}
               />
             </motion.div>
@@ -174,7 +174,7 @@ export default function FeaturedProjectGallery({
                 alt={`Project screenshot ${index + 1}`}
                 fill
                 sizes="130px"
-                style={{ objectFit: "cover", objectPosition: "center" }}
+                style={{ objectFit: "fill", objectPosition: "center" }}
                 onError={() => handleError(image)}
               />
             </Box>

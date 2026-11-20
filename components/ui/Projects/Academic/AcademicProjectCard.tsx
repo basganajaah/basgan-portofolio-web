@@ -17,7 +17,7 @@ interface AcademicProjectCardProps {
 
 export default function AcademicProjectCard({
   project,
-  isActive = false,
+  // isActive = false,
 }: AcademicProjectCardProps) {
   const { isError, handleError } = useGalleryImageErrors();
   const locale = useLocale() as Locale;
@@ -39,15 +39,6 @@ export default function AcademicProjectCard({
         bgcolor: "background.paper",
         transition: "border-color 300ms ease",
         boxShadow: 4,
-        "&::before": {
-          content: '""',
-          position: "absolute",
-          inset: 0,
-          pointerEvents: "none",
-          background: isActive
-            ? "linear-gradient(135deg, rgba(255,255,255,0.55), transparent 45%)"
-            : "none",
-        },
       }}
     >
       <Stack spacing={{ xs: 0.75, md: 1.25 }} sx={{ position: "relative" }}>

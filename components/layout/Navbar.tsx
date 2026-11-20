@@ -149,7 +149,7 @@ export default function Navbar() {
           maxWidth: "1100px",
           mx: "auto",
           borderRadius: "20px",
-          bgcolor: "#eef2ff",
+          bgcolor: "background.paper",
           backdropFilter: "blur(16px)",
           border: "2px solid #17171720",
           boxShadow: "0 4px 20px #17171720",
@@ -226,7 +226,7 @@ export default function Navbar() {
                       sx={{
                         position: "relative",
                         zIndex: 1,
-                        color: isActive ? "#eef2ff" : "text.secondary",
+                        color: isActive ? "background.paper" : "text.secondary",
                         fontSize: "0.85rem",
                         fontWeight: isActive ? 700 : 500,
                         textTransform: "none",
@@ -238,7 +238,7 @@ export default function Navbar() {
 
                         "&:hover": {
                           bgcolor: "transparent",
-                          color: isActive ? "#eef2ff" : "#171717",
+                          color: isActive ? "background.paper" : "#171717",
                         },
 
                         ...(!isActive && {
@@ -306,7 +306,7 @@ export default function Navbar() {
                 endIcon={<Download sx={{ fontSize: 16 }} />}
                 sx={{
                   bgcolor: "#171717",
-                  color: "#eef2ff",
+                  color: "background.paper",
                   borderRadius: "10px",
                   px: 2,
                   py: 1,
@@ -360,7 +360,7 @@ export default function Navbar() {
                         onClick={() => handleMobileNavClick(link.id)}
                         sx={{
                           justifyContent: "flex-start",
-                          color: isActive ? "#eef2ff" : "text.secondary",
+                          color: isActive ? "background.paper" : "text.secondary",
                           bgcolor: isActive ? "#171717" : "transparent",
                           textTransform: "none",
                           fontSize: "0.9rem",
@@ -369,7 +369,7 @@ export default function Navbar() {
                           px: 1.5,
                           py: 1,
                           "&:hover": {
-                            color: "#eef2ff",
+                            color: "background.paper",
                             bgcolor: isActive
                               ? "#171717"
                               : "rgba(23, 23, 23, 0.08)",
@@ -416,7 +416,7 @@ export default function Navbar() {
                     fullWidth
                     sx={{
                       bgcolor: "#171717",
-                      color: "#eef2ff",
+                      color: "background.paper",
                       mt: 1,
                       py: 1.2,
                       borderRadius: "10px",

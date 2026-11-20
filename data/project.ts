@@ -156,6 +156,7 @@ export const projects: Project[] = [
       "Tanstack Query",
       "Zustand",
       "Ant Design",
+      "Material UI",
       "Echarts",
       "MSW",
     ],
@@ -277,8 +278,8 @@ export const projects: Project[] = [
         en: "Solely developed the POI-CEI frontend as the Solo Frontend Engineer, bringing the product to its initial MVP release.",
       },
       {
-        id: "Mengimplementasikan desain UI dari Figma menggunakan React, TypeScript, dan Material UI dengan membangun komponen yang modular, reusable, dan responsif.",
-        en: "Translated Figma designs into responsive interfaces using React, TypeScript, and Material UI, building modular and reusable components.",
+        id: "Mengimplementasikan desain UI dari Figma menggunakan React, TypeScript, dan Material UI dengan membangun komponen yang modular, dan reusable.",
+        en: "Translated Figma designs into interfaces using React, TypeScript, and Material UI, building modular and reusable components.",
       },
       {
         id: "Mengembangkan peta interaktif menggunakan Mapbox GL, termasuk fitur pencarian lokasi melalui search bar yang terintegrasi dengan peta.",
@@ -370,13 +371,13 @@ export const projects: Project[] = [
     gallery: ["/images/projects/POI-CEI-01.jpeg"],
   },
 
-  // Academic
+  // ACADEMIC PROJECTS
   {
     id: "metacellular",
     category: "academic",
     title: {
-      id: "MetaCellular — Pulsa & Token",
-      en: "MetaCellular — Pulsa & Token",
+      id: "MetaCellular — Pulsa Prabayar & Token Listrik",
+      en: "MetaCellular — Prepaid Credit & Electric Token",
     },
     description: {
       id: "Aplikasi pembayaran digital berbasis CLI untuk simulasi pembelian pulsa dan token listrik. MetaCellular menyediakan proses transaksi yang mudah, cepat, aman, serta dilengkapi fitur promo dan pengelolaan biaya admin.",
@@ -443,8 +444,8 @@ export const projects: Project[] = [
     id: "lookalike",
     category: "academic",
     title: {
-      id: "look[A]like",
-      en: "look[A]like",
+      id: "look[A]like - Deteksi Wajah dan Kemiripan Suku",
+      en: "look[A]like - Face Detection and Ethnicity Similarity",
     },
     description: {
       id: "look[A]like merupakan aplikasi Python dan Streamlit untuk kemiripan wajah dan pengenalan etnis via gambar atau kamera. Fiturnya mencakup deteksi wajah (Haar Cascade, MTCNN, RetinaFace), skor perbandingan, serta estimasi etnis, usia, dan gender untuk analisis demografis.",
@@ -542,6 +543,8 @@ export const projects: Project[] = [
       github: "https://github.com/farhannm/be-foolens",
     },
   },
+
+  // OTHER PROJECTS
   {
     id: "binar-rental-car",
     category: "other",
@@ -570,6 +573,35 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/zahen2507/BINAR-CAR-RENTAL",
       demo: "https://binar-car-rental-topaz.vercel.app/",
+    },
+  },
+  {
+    id: "basgan-portofolio",
+    category: "other",
+    title: {
+      id: "Website Portofolio",
+      en: "Portofolio Website",
+    },
+    description: {
+      id: "Website portofolio pribadi interaktif yang menampilkan berbagai proyek, keahlian teknis, pengalaman profesional, serta perjalanan saya. Dibangun menggunakan Next.js, Material UI, dan Framer Motion.",
+      en: "An interactive personal portfolio website designed to showcase my projects, technical skills, professional experience, and growth as a developer. Developed using Next.js, Material UI, and Framer Motion.",
+    },
+    context: {
+      id: "Proyek Pribadi",
+      en: "Personal Project",
+    },
+    period: "2026",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Material UI",
+      "Framer Motion",
+      "next-intl/i18n",
+    ],
+    gallery: ["/images/projects/PORTOFOLIO-01.png"],
+    links: {
+      github: "https://github.com/basganajaah/basgan-portofolio-web",
     },
   },
 ];

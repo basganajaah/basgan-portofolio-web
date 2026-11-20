@@ -236,7 +236,7 @@ export default function Footer() {
                 py: 0.85,
                 borderRadius: 2,
                 bgcolor: "text.primary",
-                color: "#eef2ff",
+                color: "background.paper",
                 backdropFilter: "blur(8px)",
                 fontSize: "0.8rem",
                 fontWeight: 500,

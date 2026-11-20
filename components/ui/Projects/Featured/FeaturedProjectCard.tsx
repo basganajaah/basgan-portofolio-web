@@ -72,7 +72,12 @@ export default function FeaturedProjectCard({
             }}
           >
             {project.context && (
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  fontSize: { xs: 12, md: 16 },
+                }}
+              >
                 {getLocalizedText(project.context, locale)}
               </Typography>
             )}
@@ -92,7 +97,12 @@ export default function FeaturedProjectCard({
             )}
 
             {project.organization && (
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  fontSize: { xs: 12, md: 16 },
+                }}
+              >
                 {getLocalizedText(project.organization, locale)}
               </Typography>
             )}
@@ -118,9 +128,18 @@ export default function FeaturedProjectCard({
                 sx={{ alignItems: "center" }}
               >
                 <GroupsOutlinedIcon
-                  sx={{ fontSize: 28, color: "text.secondary", pr: "6px" }}
+                  sx={{
+                    fontSize: { xs: 26, md: 28 },
+                    color: "text.secondary",
+                    pr: "6px",
+                  }}
                 />
-                <Typography sx={{ color: "text.secondary" }}>
+                <Typography
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: { xs: 12, md: 16 },
+                  }}
+                >
                   {project.teamSize} {t("team")}
                 </Typography>
               </Stack>
@@ -142,7 +161,12 @@ export default function FeaturedProjectCard({
               )}
 
             {project.period && (
-              <Typography sx={{ color: "text.secondary" }}>
+              <Typography
+                sx={{
+                  color: "text.secondary",
+                  fontSize: { xs: 12, md: 16 },
+                }}
+              >
                 {project.period}
               </Typography>
             )}

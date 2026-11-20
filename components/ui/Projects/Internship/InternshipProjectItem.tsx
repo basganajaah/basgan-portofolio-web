@@ -56,7 +56,7 @@ export default function InternshipProjectItem({
               position: "relative",
               aspectRatio: "16 / 10",
               overflow: "hidden",
-              borderRadius: 3,
+              borderRadius: 1,
               order: { xs: 0, md: isReversed ? 1 : 0 },
               bgcolor: "action.hover",
             }}
@@ -77,7 +77,7 @@ export default function InternshipProjectItem({
                   alt={getLocalizedText(project.title, locale)}
                   fill
                   sizes="(max-width: 900px) 100vw, 50vw"
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "fill" }}
                   onError={handleError}
                 />
               </motion.div>
