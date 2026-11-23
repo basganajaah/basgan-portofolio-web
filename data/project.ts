@@ -34,7 +34,7 @@ export const projects: Project[] = [
     ],
     teamSize: 3,
     period: "2026",
-    roles: ["System Analyst", "Full Stack Developer", "UI/UX Designer"],
+    roles: ["Full Stack Engineer", "System Analyst", "UI/UX Designer"],
     contributions: [
       {
         id: "Melakukan requirements gathering, menentukan ruang lingkup proyek, dan merancang solusi aplikasi.",
@@ -546,6 +546,35 @@ export const projects: Project[] = [
 
   // OTHER PROJECTS
   {
+    id: "basgan-portofolio",
+    category: "other",
+    title: {
+      id: "Website Portofolio",
+      en: "Portofolio Website",
+    },
+    description: {
+      id: "Website portofolio pribadi interaktif yang menampilkan berbagai proyek, keahlian teknis, pengalaman profesional, serta perjalanan saya. Dibangun menggunakan Next.js, Material UI, dan Framer Motion.",
+      en: "An interactive personal portfolio website designed to showcase my projects, technical skills, professional experience, and growth as a developer. Developed using Next.js, Material UI, and Framer Motion.",
+    },
+    context: {
+      id: "Proyek Pribadi",
+      en: "Personal Project",
+    },
+    period: "2026",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Material UI",
+      "Framer Motion",
+      "next-intl/i18n",
+    ],
+    gallery: ["/images/projects/PORTOFOLIO-01.png"],
+    links: {
+      github: "https://github.com/basganajaah/basgan-portofolio-web",
+    },
+  },
+  {
     id: "binar-rental-car",
     category: "other",
     title: {
@@ -573,35 +602,6 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/zahen2507/BINAR-CAR-RENTAL",
       demo: "https://binar-car-rental-topaz.vercel.app/",
-    },
-  },
-  {
-    id: "basgan-portofolio",
-    category: "other",
-    title: {
-      id: "Website Portofolio",
-      en: "Portofolio Website",
-    },
-    description: {
-      id: "Website portofolio pribadi interaktif yang menampilkan berbagai proyek, keahlian teknis, pengalaman profesional, serta perjalanan saya. Dibangun menggunakan Next.js, Material UI, dan Framer Motion.",
-      en: "An interactive personal portfolio website designed to showcase my projects, technical skills, professional experience, and growth as a developer. Developed using Next.js, Material UI, and Framer Motion.",
-    },
-    context: {
-      id: "Proyek Pribadi",
-      en: "Personal Project",
-    },
-    period: "2026",
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Material UI",
-      "Framer Motion",
-      "next-intl/i18n",
-    ],
-    gallery: ["/images/projects/PORTOFOLIO-01.png"],
-    links: {
-      github: "https://github.com/basganajaah/basgan-portofolio-web",
     },
   },
 ];

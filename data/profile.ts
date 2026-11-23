@@ -37,7 +37,7 @@ export const profile = {
   ] satisfies LocalizedText[],
 
   role: [
-    "Full Stack Developer",
+    "Full Stack Engineer",
     "Mobile Developer",
     "Software Engineer",
     "UI/UX Designer",

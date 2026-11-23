@@ -282,6 +282,7 @@ export default function Contact() {
                     fontSize: "0.85rem",
                     textTransform: "none",
                     overflow: "hidden",
+                    border: 2
                   }}
                 >
                   <Stack
