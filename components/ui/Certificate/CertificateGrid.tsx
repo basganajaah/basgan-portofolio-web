@@ -21,7 +21,12 @@ export default function CertificateGrid() {
   const [selectedCertificate, setSelectedCertificate] =
     useState<Certificate | null>(null);
 
-  const visibleCertificates = certificates.slice(0, visibleCount);
+  const visibleCertificates = certificates
+    .toSorted(
+      (a, b) =>
+        new Date(b.issueDate).getTime() - new Date(a.issueDate).getTime(),
+    )
+    .slice(0, visibleCount);
   const hasMore = visibleCount < certificates.length;
 
   const handleLoadMore = () => {
@@ -79,7 +84,7 @@ export default function CertificateGrid() {
               borderRadius: 2,
               fontWeight: 700,
               textTransform: "none",
-              border: "2px solid"
+              border: "2px solid",
             }}
           >
             {t("loadMore")}

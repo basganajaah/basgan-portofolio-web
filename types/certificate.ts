@@ -6,7 +6,7 @@ export interface Certificate {
   description: LocalizedText;
   organization: string;
   image: string;
-  issueDate?: string;
+  issueDate: string;
   expirationDate?: string;
   credentialUrl?: string;
   score?: string;

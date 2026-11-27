@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { Suspense } from "react";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
@@ -77,17 +76,15 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={plusJakartaSans.variable}>
       <body>
-        <Suspense fallback={null}>
-          <NextIntlClientProvider
-            locale={locale}
-            messages={(await import(`../../messages/${locale}.json`)).default}
-          >
-            <ThemeRegistry>
-              <ScrollProgress />
-              {children}
-            </ThemeRegistry>
-          </NextIntlClientProvider>
-        </Suspense>
+        <NextIntlClientProvider
+          locale={locale}
+          messages={(await import(`../../messages/${locale}.json`)).default}
+        >
+          <ThemeRegistry>
+            <ScrollProgress />
+            {children}
+          </ThemeRegistry>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

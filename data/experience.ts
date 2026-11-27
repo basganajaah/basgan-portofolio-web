@@ -39,9 +39,9 @@ export const workExperiences: WorkExperience[] = [
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Mapbox-GL",
-      "Apache Echarts",
-      "Analtyical Dashboard",
+      "Map and Charts Data Visualization",
+      "Modular Component Library",
+      "Real Time Analytical Dashboard",
     ],
   },
 ];

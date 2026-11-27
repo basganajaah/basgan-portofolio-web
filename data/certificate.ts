@@ -4,8 +4,8 @@ export const certificates: Certificate[] = [
   {
     id: "arutala-software-tester",
     title: {
-      id: "Arutala Lab Certified Junior Software Tester",
-      en: "Arutala Lab Certified Junior Software Tester",
+      id: "Arutala Junior Software Tester",
+      en: "Arutala Junior Software Tester",
     },
     description: {
       id: "Sertifikasi Junior Software Tester yang menunjukkan kompetensi dalam pelaksanaan pengujian perangkat lunak, termasuk test execution dan unit testing.",
@@ -68,5 +68,22 @@ export const certificates: Certificate[] = [
     issueDate: "2023-03-01",
     image: "/images/certificates/BINAR.jpg",
     category: "Frontend Web Development",
+  },
+  {
+    id: "ibm-web-fundamental",
+    title: {
+      id: "Web Development Fundamentals",
+      en: "Web Development Fundamentals",
+    },
+    description: {
+      id: "Mempelajari fundamental web development, termasuk HTML, CSS, JavaScript, responsive design, website testing, deployment, serta version control. Program ini mencakup praktik membangun website interaktif dan memahami proses pengembangan web.",
+      en: "Learned web development fundamentals, including HTML, CSS, JavaScript, responsive design, website testing, deployment, and version control. The program covered hands-on practice in building interactive websites and understanding the web development process.",
+    },
+    organization: "IBM Skills Build",
+    issueDate: "2026-11-26",
+    image: "/images/certificates/IBM-WEB-FUNDAMENTAL.jpg",
+    category: "Web Development",
+    credentialUrl:
+      "https://www.credly.com/earner/earned/badge/92d4349e-0269-4224-9b6f-dbba288c22a5",
   },
 ];
