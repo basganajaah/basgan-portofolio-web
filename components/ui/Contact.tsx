@@ -40,6 +40,8 @@ export default function Contact() {
   const [copied, setCopied] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+const CV_PATH = "/document/CV_ATS_Bandyaga A. Sugandi.pdf";
+
   const handleCopyEmail = async () => {
     try {
       await navigator.clipboard.writeText(profile.email);
@@ -397,7 +399,7 @@ export default function Contact() {
 
                 <Button
                   component="a"
-                  href="/document/CV_ATS_Bandyaga%20Adiansyah%20Sugandi.pdf"
+                  href={CV_PATH}
                   download
                   variant="text"
                   size="medium"

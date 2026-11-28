@@ -19,7 +19,7 @@ import LanguageSwitcher from "@/components/atoms/LanguageSwicher";
 import { profile } from "@/data/profile";
 import { useTranslations } from "next-intl";
 
-const CV_PATH = "/document/CV_ATS_Bandyaga Adiansyah Sugandi.pdf";
+const CV_PATH = "/document/CV_ATS_Bandyaga A. Sugandi.pdf";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
